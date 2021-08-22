@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+.vs/
+API_Refs/
+API_Refs2/
+x64/
