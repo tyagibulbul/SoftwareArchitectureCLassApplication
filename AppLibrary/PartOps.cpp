@@ -1,6 +1,7 @@
 #include "PartOps.h"
 #include <iostream>
 #include "..\Journaling\Journaling.h"
+#include "..\Journaling\JournalHelpers.h"
 #include "..\Core\GuidObject.h"
 #include "Feature.h"
 #include "..\Core\StringUtils.h"
@@ -14,7 +15,7 @@ PartFile* Journaling_OpenPart(std::string partFilePath)
 	//If Journaling write the thing things
 	if (IsJournaling())
 	{
-		JournalStartCall("OpenPart", JournalCallData::CannedGlobals::SESSION);
+		JournalStartCall("OpenPart", CannedGlobals::SESSION);
 		JournalStringInParam(partFilePath, "partFilePath");
 	}
 	PartFile* retVal = nullptr;
@@ -35,7 +36,7 @@ PartFile* Journaling_MakePart(std::string partFilePath)
 	//If Journaling write the thing things
 	if (IsJournaling())
 	{
-		JournalStartCall("MakePart", JournalCallData::CannedGlobals::SESSION);
+		JournalStartCall("MakePart", CannedGlobals::SESSION);
 		JournalStringInParam(partFilePath, "partFilePath");
 	}
 	PartFile* retVal = nullptr;

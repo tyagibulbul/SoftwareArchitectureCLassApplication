@@ -40,7 +40,7 @@ void UI::StartGUILoop()
 
 	//Setup Journaling File
 	SetJournalingLangauge(JournalingLanguage::CPP);
-	StartJournaling("C:\\Users\\polek\\source\\repos\\AutomationAPI_pt2\\JournaledCPPFileProject\\SampleJournal.txt");
+	StartJournaling("C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication\\JournaledCPPFileProject\\SampleJournal.txt");
 
 
 	PartFile * partFile = MakePartUI("d:\\workdir\\someDir\\SomeName.part");

@@ -3,31 +3,67 @@
 
 #include "framework.h"
 #include "Journaling.h"
+#include "JournalingInternal.h"
+#include "JournalHelpers.h"
+#include "JournalCallParamDataClass.h"
+#include "JournalCallParamDataString.h"
 #include <fstream>
 #include <string>
 #include <sstream>
 #include <map>
-//// This is an example of an exported variable
-//JOURNALING_API int nJournaling=0;
-//
-//// This is an example of an exported function.
-//JOURNALING_API int fnJournaling(void)
-//{
-//    return 0;
-//}
+#include "JournalCallData.h"
+#include "JournalFile.h"
+
+static JournalFile* activeJournalFile = nullptr;
+
 
 static JournalingLanguage m_JournalingLanguage;
 static bool m_isJournaling = false;
-static std::ofstream* m_file;
-static std::stringstream preProForma; // Include files for example
-static std::stringstream journalContents;
+
 static JournalCallData * currentCall = nullptr;
+
 static std::map<int, std::string> m_guidToParamMap;
+
 static std::map<std::string, int> m_paramNameCounts;
+
+JournalFile* GetActiveJournalFile()
+{
+    return activeJournalFile;
+}
+
+bool InGuidToParamMap(int guid)
+{
+    if (m_guidToParamMap.find(guid) == m_guidToParamMap.end())
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+void AddGuidToParamMap(int guid, std::string& param)
+{
+    m_guidToParamMap[guid] = std::string(param);
+}
+
+std::string GetGuidToParam(int guid)
+{
+    return m_guidToParamMap[guid];
+}
 
 void SetJournalingLangauge(JournalingLanguage jnlLang)
 {
-    m_JournalingLanguage = jnlLang;
+    if (m_isJournaling)
+    {
+        throw new std::exception("Cannot change journal language while currently journaling");
+    }
+    else
+    {
+        m_JournalingLanguage = jnlLang;
+    }
+    
 }
 
 JournalingLanguage GetJournalingLangauge()
@@ -44,43 +80,12 @@ void StartJournaling(std::string jnlFile)
     else
     {
         m_isJournaling = true;
-        m_file = new std::ofstream(jnlFile);
-        journalContents.clear();
-        preProForma.clear();
+        activeJournalFile = new JournalFile(jnlFile, GetJournalingLangauge());
+
     }
 }
 
-void ProFormaStart()
-{
-    if (m_JournalingLanguage == JournalingLanguage::CPP)
-    {
-        ProFormaStartCPP();
-    }
-    else
-    {
-        ProFormaStartJava();
-    }
-}
 
-void ProFormaStartCPP()
-{
-    //Write out include Files
-    *m_file << "#include <iostream>" << std::endl;
-    *m_file << "#include \"..\\AutomationBinding\\Session.h\""<< std::endl;
-    *m_file << "#include \"..\\AutomationBinding\\Part.h\"" << std::endl;
-
-    *m_file << preProForma.str() << std::endl;
-    
-    *m_file << "int main()" << std::endl;
-    *m_file << "{" << std::endl;
-    *m_file << "    std::cout << \"Hello World!\\n\";" << std::endl;
-    *m_file << "    AutomationAPI::Session* mySession = AutomationAPI::Session::GetSession();" << std::endl;
-}
-
-void ProFormaStartJava()
-{
-    *m_file << "NIY Java" << std::endl;
-}
 
 void EndJournaling()
 {
@@ -90,50 +95,34 @@ void EndJournaling()
     }
     else
     {
-        ProFormaStart();
-        *m_file << journalContents.str() << std::endl;
-        ProFormEnd();
-        m_file->close();
+        //write out file and delete resources
+        activeJournalFile->WriteJournalFile();
+        delete activeJournalFile;
+
         m_isJournaling = false;
         m_guidToParamMap.clear();
         m_paramNameCounts.clear();
     }
 
 }
-void ProFormEnd()
-{
-    if (m_JournalingLanguage == JournalingLanguage::CPP)
-    {
-        ProFormEndCPP();
-    }
-    else
-    {
-        ProFormEndJava();
-    }
-}
 
-void ProFormEndCPP()
-{
-    *m_file << "}" << std::endl;
-}
-void ProFormEndJava()
-{
-    *m_file << "NIY END" << std::endl;
-}
 
 bool IsJournaling()
 {
     return m_isJournaling;
 }
 
+
 void JournalIntInParam(int value, std::string paramName)
 {
-
+    // TODO 
+    // You will need ot create a JournalCallParamDataInteger class as a reminder
 }
 
 void JournalBoolInParam(bool value, std::string paramName)
 {
-
+    // TODO
+    // You will need ot create a JournalCallParamDataBoolean class as a reminder
 }
 
 void JournalStringInParam(std::string value, std::string paramName)
@@ -150,7 +139,7 @@ void JournalReturnClass(GuidObject* classObject, std::string className, std::str
     currentCall->AddReturnValue(journalCallParamData);
 }
 
-void JournalStartCall(std::string methodName, JournalCallData::CannedGlobals cannedGlobal)
+void JournalStartCall(std::string methodName, CannedGlobals cannedGlobal)
 {
     currentCall = new JournalCallData(methodName, cannedGlobal);
 }
@@ -167,7 +156,7 @@ void JournalEndCall()
 
 void WriteCall()
 {
-    if (m_JournalingLanguage == JournalingLanguage::CPP)
+    if (GetJournalingLangauge() == JournalingLanguage::CPP)
     {
         WriteCallCPP();
     }
@@ -184,7 +173,9 @@ void WriteCallCPP()
 
 void WriteCallJava()
 {
-    journalContents << "NIY WriteCallJava" << std::endl;
+    std::string NIY = std::string("NIY WriteCallJava");
+    activeJournalFile->WriteToFile(NIY);
+    activeJournalFile->NewLine(); 
 }
 
 std::string GenerateParamaterName(std::string paramNameBase)
@@ -212,158 +203,3 @@ std::string GenerateParamaterName(std::string paramNameBase)
     return retVal;
 }
 
-JournalCallData::JournalCallData(std::string methodName, CannedGlobals cannedGlobals) 
-    : m_methodName(methodName), m_cannedGlobal(cannedGlobals), m_isCanned(true), m_retVal(nullptr), m_classObject(nullptr)
-{
-}
-
-JournalCallData::JournalCallData(std::string methodName, GuidObject*  m_classObject)
-    : m_methodName(methodName), m_cannedGlobal(CannedGlobals::NOT_CANNED), m_isCanned(false), m_retVal(nullptr) ,m_classObject(m_classObject)
-{
-
-}
-
-void JournalCallData::AddParameter(JournalCallParamData* param)
-{
-    m_params.push_back(param);
-}
-
-void JournalCallData::AddReturnValue(JournalCallParamData* param)
-{
-    m_retVal = param;
-}
-
-JournalCallData::~JournalCallData()
-{
-    for(int i=0; i < m_params.size(); i++)
-    {
-        delete m_params[i];
-    }
-
-    delete m_retVal;
-}
-
-void JournalCallData::Journal()
-{
-    // First check if we have a return value
-    if (this->m_retVal != nullptr)
-    {
-        m_retVal->Journal();
-    }
-    // Then print out call to object (the this) and the method call
-
-    if (this->m_isCanned)
-    {
-        if (this->m_cannedGlobal == CannedGlobals::SESSION)
-        {
-            journalContents << "mySession->";
-        }
-    }
-    else
-    {
-        //Retrieve param Name
-        std::string paramName = m_guidToParamMap[this->m_classObject->GetGuid()];
-
-        journalContents << paramName << "->";
-    }
-
-    journalContents <<  this->m_methodName << "(";
-    
-    for (int i = 0; i < m_params.size(); i++)
-    {
-        m_params[i]->Journal();
-    }
-    journalContents << ");" << std::endl;
-
-
-}
-
-JournalCallParamData::JournalCallParamData(std::string paramName,
-    ParameterMetaType paramType, ParameterBasicType parameterBasicType) :
-        m_paramName(paramName), m_paramType(paramType), m_parameterBasicType(parameterBasicType),
-        m_isClass(false), m_className()
-{
-
-}
-
-JournalCallParamData::JournalCallParamData(std::string paramName, ParameterMetaType paramType,
-    std::string className) : m_paramName(paramName), m_paramType(paramType),
-    m_isClass(true), m_className(className), m_parameterBasicType(ParameterBasicType::NOT_BASIC)
-{
-
-}
-
-JournalCallParamDataString::JournalCallParamDataString(std::string paramName,
-    ParameterMetaType paramType, std::string value) : 
-        JournalCallParamData(paramName, paramType, JournalCallParamData::ParameterBasicType::STRING), m_value(value)
-{
-
-}
-
-void JournalCallParamDataString::Journal()
-{
-    if (this->m_paramType == JournalCallParamData::ParameterMetaType::INPUT)
-    {
-        //There is a bug here, all \ need to be replaced with \\
-
-        journalContents << "\"" << m_value << "\"" ;
-    }
-    else if (this->m_paramType == JournalCallParamData::ParameterMetaType::OUTPUT)
-    {
-        throw new std::exception("NIY ");
-    }
-    else // RETURN
-    {
-        throw new std::exception("NIY");
-    }
-
-
-}
-
-JournalCallParamDataClass::JournalCallParamDataClass(std::string paramName, ParameterMetaType paramType,
-    GuidObject* classObject, std::string className) :
-     JournalCallParamData(paramName, paramType, JournalCallParamData::ParameterBasicType::STRING), m_classObject (classObject),
-         m_paramName(paramName),  m_className (className)
-{
-
-}
-
-void JournalCallParamDataClass::Journal()
-{
-    
-
-    if (this->m_paramType == JournalCallParamData::ParameterMetaType::INPUT)
-    {
-        
-        throw new std::exception("NIY ");
-    }
-    else if (this->m_paramType == JournalCallParamData::ParameterMetaType::OUTPUT)
-    {
-        throw new std::exception("NIY ");
-    }
-    else // RETURN
-    {
-        std::string paramName;
-
-        if (m_guidToParamMap.find(this->m_classObject->GetGuid()) == m_guidToParamMap.end())
-        {
-            paramName = GenerateParamaterName(m_paramName);
-            m_guidToParamMap[this->m_classObject->GetGuid()] = paramName;
-
-            journalContents << m_className << " * " << paramName << " = ";
-        }
-        else
-        {
-            paramName = m_guidToParamMap[this->m_classObject->GetGuid()];
-            //from a query method called multiple times
-
-            journalContents <<  paramName << " = ";
-
-        }
-
-        
-
-
-    }
-
-}

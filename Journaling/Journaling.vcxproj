@@ -21,13 +21,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -91,10 +91,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
+    <ClInclude Include="JournalCallData.h" />
+    <ClInclude Include="JournalCallParamData.h" />
+    <ClInclude Include="JournalCallParamDataClass.h" />
+    <ClInclude Include="JournalCallParamDataString.h" />
+    <ClInclude Include="JournalExports.h" />
+    <ClInclude Include="JournalFile.h" />
+    <ClInclude Include="JournalHelpers.h" />
     <ClInclude Include="Journaling.h" />
+    <ClInclude Include="JournalingInternal.h" />
+    <ClInclude Include="JournalingTypes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="JournalCallData.cpp" />
+    <ClCompile Include="JournalCallParamData.cpp" />
+    <ClCompile Include="JournalCallParamDataClass.cpp" />
+    <ClCompile Include="JournalCallParamDataString.cpp" />
+    <ClCompile Include="JournalFile.cpp" />
     <ClCompile Include="Journaling.cpp" />
   </ItemGroup>
   <ItemGroup>
