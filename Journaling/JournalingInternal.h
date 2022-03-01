@@ -10,7 +10,7 @@ JournalFile* GetActiveJournalFile();
 
 bool InGuidToParamMap(int guid);
 void AddGuidToParamMap(int guid, std::string& param);
-std::string GetGuidToParam(int guid);
+std::string GetGuidToParam(int guid, bool& found);
 
 void WriteCall();
 void WriteCallCPP();

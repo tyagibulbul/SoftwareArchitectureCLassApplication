@@ -48,9 +48,21 @@ void AddGuidToParamMap(int guid, std::string& param)
     m_guidToParamMap[guid] = std::string(param);
 }
 
-std::string GetGuidToParam(int guid)
+std::string GetGuidToParam(int guid, bool & found)
 {
-    return m_guidToParamMap[guid];
+    
+    if (m_guidToParamMap.find(guid) != m_guidToParamMap.end())
+    {
+        found = true;
+        return m_guidToParamMap[guid];
+    }
+    else
+    {
+        found = false;
+        return "";
+    }
+
+    
 }
 
 void SetJournalingLangauge(JournalingLanguage jnlLang)

@@ -38,10 +38,19 @@ void JournalCallParamDataClass::Journal()
         }
         else
         {
-            paramName = GetGuidToParam(this->m_classObject->GetGuid());
+            bool found = false;
+            paramName = GetGuidToParam(this->m_classObject->GetGuid(), found);
             //from a query method called multiple times
-
-            std::string jnlString = paramName + " = ";
+            std::string jnlString ;
+            if (found)
+            {
+                jnlString = paramName + " = ";
+            }
+            else
+            {
+                std::string temp = "<UNKNOWN>";
+                jnlString = temp + " = ";
+            }
             GetActiveJournalFile()->WriteToFile(jnlString);
 
         }
