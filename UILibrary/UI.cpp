@@ -1,7 +1,7 @@
 
 #include "UI.h"
-#include "PartsUtilsUI.h"
-#include "MakeWidgetFeature.h"
+#include "..\PartOpsUI\PartsUtilsUI.h"
+#include "..\FeatureOpsUI\MakeWidgetFeature.h"
 #include "..\AppLibrary\PartOps.h"
 #include "..\Journaling\Journaling.h"
 #include "..\Core\LibraryLoad.h"
