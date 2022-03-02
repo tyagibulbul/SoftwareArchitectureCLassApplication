@@ -11,9 +11,9 @@ class CORE_API GuidObject
 
 
 		virtual ~GuidObject();
-
-	private:
 		GuidObject() = delete;
+	private:
+		
 		int m_guid;
 
 };
@@ -25,12 +25,13 @@ class CORE_API GuidObjectManager
 
 		GuidObject* GetObjectFromGUID(int guid);
 		void SetObjectFromGUID(int guid, GuidObject* objectToStore);
+		GuidObjectManager(const GuidObjectManager&) = delete;
+		GuidObjectManager& operator=(const GuidObjectManager&) = delete;
 
 	private:
 		GuidObjectManager() = default;
 		~GuidObjectManager() = default;
-		GuidObjectManager(const GuidObjectManager&) = delete;
-		GuidObjectManager& operator=(const GuidObjectManager&) = delete;
+
 
 };
 

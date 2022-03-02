@@ -13,11 +13,11 @@ public:
 		ParameterMetaType paramType, GuidObject* classObject, std::string className);
 
 	void Journal() override;
-
-private:
 	JournalCallParamDataClass() = delete;
 	JournalCallParamDataClass(const JournalCallParamDataClass&) = delete;
 	JournalCallParamDataClass& operator=(const JournalCallParamDataClass&) = delete;
+private:
+
 	GuidObject* m_classObject;
 	std::string m_paramName;
 	std::string m_className;

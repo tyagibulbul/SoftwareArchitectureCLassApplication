@@ -13,10 +13,10 @@ public:
 		ParameterMetaType paramType, std::string value);
 
 	void Journal() override;
-
-private:
 	JournalCallParamDataString() = delete;
 	JournalCallParamDataString(const JournalCallParamDataString&) = delete;
 	JournalCallParamDataString& operator=(const JournalCallParamDataString&) = delete;
+private:
+
 	std::string m_value;
 };

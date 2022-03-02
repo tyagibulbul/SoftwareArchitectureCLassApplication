@@ -21,16 +21,16 @@ public:
 	};
 
 	virtual void Journal() = 0;
-
+	JournalCallParamData() = delete;
+	JournalCallParamData(const JournalCallParamData&) = delete;
+	JournalCallParamData& operator=(const JournalCallParamData&) = delete;
 protected:
 	JournalCallParamData(std::string paramName,
 		ParameterMetaType paramType, ParameterBasicType parameterBasicType);
 	JournalCallParamData(std::string paramName, ParameterMetaType paramType,
 		std::string className);
 
-	JournalCallParamData() = delete;
-	JournalCallParamData(const JournalCallParamData&) = delete;
-	JournalCallParamData& operator=(const JournalCallParamData&) = delete;
+
 	std::string m_paramName;
 	ParameterMetaType m_paramType;
 	bool m_isClass;

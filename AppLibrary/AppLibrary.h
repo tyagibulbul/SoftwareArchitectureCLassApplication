@@ -10,13 +10,4 @@
 #define APPLIBRARY_API __declspec(dllimport)
 #endif
 
-//// This class is exported from the dll
-//class APPLIBRARY_API CAppLibrary {
-//public:
-//	CAppLibrary(void);
-//	// TODO: add your methods here.
-//};
-//
-//extern APPLIBRARY_API int nAppLibrary;
-//
-//APPLIBRARY_API int fnAppLibrary(void);
+

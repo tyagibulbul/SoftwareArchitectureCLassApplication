@@ -10,13 +10,3 @@
 #define AUTOMATIONBINDING_API __declspec(dllimport)
 #endif
 
-//// This class is exported from the dll
-//class AUTOMATIONBINDING_API CAutomationBinding {
-//public:
-//	CAutomationBinding(void);
-//	// TODO: add your methods here.
-//};
-//
-//extern AUTOMATIONBINDING_API int nAutomationBinding;
-//
-//AUTOMATIONBINDING_API int fnAutomationBinding(void);

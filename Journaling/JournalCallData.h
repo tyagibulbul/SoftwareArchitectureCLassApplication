@@ -19,11 +19,11 @@ public:
 	virtual ~JournalCallData();
 
 	void Journal();
-
-private:
 	JournalCallData() = delete;
 	JournalCallData(const JournalCallData&) = delete;
 	JournalCallData& operator=(const JournalCallData&) = delete;
+private:
+
 	std::string m_methodName;
 	std::vector<JournalCallParamData*> m_params;
 	bool m_isCanned;

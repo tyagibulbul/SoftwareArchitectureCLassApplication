@@ -14,13 +14,4 @@ CORE_API int initializeProduct(void);
 
 CORE_API int shutdownProduct(void);
 
-//// This class is exported from the dll
-//class CORE_API CCore {
-//public:
-//	CCore(void);
-//	// TODO: add your methods here.
-//};
-//
-//extern CORE_API int nCore;
-//
-//CORE_API int fnCore(void);
+

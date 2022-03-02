@@ -26,11 +26,12 @@ namespace AutomationAPI
 			Part* OpenPart(std::string partFilePath);
 
 			virtual ~Session();
+			Session(const Session&) = delete;
+			Session& operator=(const Session&) = delete;
 
 		private:
 			Session() = default;
-			Session(const Session&) = delete;
-			Session& operator=(const Session&) = delete;
+
 	};
 
 }
