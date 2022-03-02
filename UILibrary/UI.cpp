@@ -47,7 +47,7 @@ void UI::StartGUILoop()
 	AddWidgetFeatureToPartUI(partFile, true, 10);
 	SavePartUI(partFile);
 
-	PartFile* partFile2 = OpenPartUI("C:\\Users\\polek\\source\\repos\\AutomationAPI_pt2\\SampleVersionUp.prt");
+	PartFile* partFile2 = OpenPartUI("C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication\\SampleVersionUp.prt");
 
 	SavePartUI(partFile2);
 

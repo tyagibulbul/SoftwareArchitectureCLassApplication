@@ -32,7 +32,7 @@ void JournalCallParamDataClass::Journal()
 
         if (!InGuidToParamMap(this->m_classObject->GetGuid()))
         {
-            paramName = GenerateParamaterName(m_paramName);
+            paramName = GenerateVariableName(m_paramName);
             AddGuidToParamMap(this->m_classObject->GetGuid(), paramName);
 
             std::string jnlString = m_className + " * " + paramName + " = ";

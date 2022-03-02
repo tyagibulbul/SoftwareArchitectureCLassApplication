@@ -18,6 +18,10 @@ using namespace Journal;
 
 static JournalFile* activeJournalFile = nullptr;
 
+static void WriteCall();
+static void WriteCallCPP();
+static void WriteCallJava();
+
 
 static JournalingLanguage m_JournalingLanguage;
 static bool m_isJournaling = false;
@@ -26,7 +30,7 @@ static Journal::JournalCallData * currentCall = nullptr;
 
 static std::map<int, std::string> m_guidToParamMap;
 
-static std::map<std::string, int> m_paramNameCounts;
+static std::map<std::string, int> m_variableNameCounts;
 
 JournalFile* GetActiveJournalFile()
 {
@@ -115,7 +119,7 @@ void EndJournaling()
 
         m_isJournaling = false;
         m_guidToParamMap.clear();
-        m_paramNameCounts.clear();
+        m_variableNameCounts.clear();
     }
 
 }
@@ -192,26 +196,26 @@ void WriteCallJava()
     activeJournalFile->NewLine(); 
 }
 
-std::string GenerateParamaterName(std::string paramNameBase)
+std::string GenerateVariableName(std::string variableName)
 {
     std::string retVal;
     int numAppend = 0;
     //Is nameBase in map already?
-    if (m_paramNameCounts.find(paramNameBase) == m_paramNameCounts.end())
+    if (m_variableNameCounts.find(variableName) == m_variableNameCounts.end())
     {
         //Not in map so append 1 and store it
-        m_paramNameCounts[paramNameBase] = 1;
+        m_variableNameCounts[variableName] = 1;
         numAppend = 1;
     }
     else
     {
-        numAppend = m_paramNameCounts[paramNameBase] ;
+        numAppend = m_variableNameCounts[variableName] ;
         numAppend = numAppend + 1;
-        m_paramNameCounts[paramNameBase] = numAppend;
+        m_variableNameCounts[variableName] = numAppend;
     }
 
     std::stringstream paramNameBuilder;
-    paramNameBuilder << paramNameBase << numAppend;
+    paramNameBuilder << variableName << numAppend;
     retVal = paramNameBuilder.str();
     
     return retVal;

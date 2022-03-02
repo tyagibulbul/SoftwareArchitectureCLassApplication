@@ -16,10 +16,8 @@ bool InGuidToParamMap(int guid);
 void AddGuidToParamMap(int guid, std::string& param);
 std::string GetGuidToParam(int guid, bool& found);
 
-void WriteCall();
-void WriteCallCPP();
-void WriteCallJava();
 
-std::string GenerateParamaterName(std::string paramName);
+
+std::string GenerateVariableName(std::string variableName);
 
 
