@@ -2,6 +2,8 @@
 #include "JournalingInternal.h"
 #include "JournalFile.h"
 
+using namespace Journal;
+
 JournalCallParamDataString::JournalCallParamDataString(std::string paramName,
     ParameterMetaType paramType, std::string value) :
     JournalCallParamData(paramName, paramType,

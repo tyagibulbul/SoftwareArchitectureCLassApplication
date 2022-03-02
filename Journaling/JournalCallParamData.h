@@ -1,42 +1,43 @@
 #pragma once
 
 #include <string>
-
-class JournalCallParamData
+namespace Journal
 {
-public:
-	enum class ParameterMetaType
+	class JournalCallParamData
 	{
-		INPUT,
-		OUTPUT,
-		RETURN
+	public:
+		enum class ParameterMetaType
+		{
+			INPUT,
+			OUTPUT,
+			RETURN
+		};
+
+		enum class ParameterBasicType
+		{
+			STRING,
+			BOOLEAN,
+			INTEGER,
+			NOT_BASIC
+		};
+
+		virtual void Journal() = 0;
+		JournalCallParamData() = delete;
+		JournalCallParamData(const JournalCallParamData&) = delete;
+		JournalCallParamData& operator=(const JournalCallParamData&) = delete;
+	protected:
+		JournalCallParamData(std::string paramName,
+			ParameterMetaType paramType, ParameterBasicType parameterBasicType);
+		JournalCallParamData(std::string paramName, ParameterMetaType paramType,
+			std::string className);
+
+
+		std::string m_paramName;
+		ParameterMetaType m_paramType;
+		bool m_isClass;
+		ParameterBasicType m_parameterBasicType;
+		std::string m_className;
+
+
 	};
-
-	enum class ParameterBasicType
-	{
-		STRING,
-		BOOLEAN,
-		INTEGER,
-		NOT_BASIC
-	};
-
-	virtual void Journal() = 0;
-	JournalCallParamData() = delete;
-	JournalCallParamData(const JournalCallParamData&) = delete;
-	JournalCallParamData& operator=(const JournalCallParamData&) = delete;
-protected:
-	JournalCallParamData(std::string paramName,
-		ParameterMetaType paramType, ParameterBasicType parameterBasicType);
-	JournalCallParamData(std::string paramName, ParameterMetaType paramType,
-		std::string className);
-
-
-	std::string m_paramName;
-	ParameterMetaType m_paramType;
-	bool m_isClass;
-	ParameterBasicType m_parameterBasicType;
-	std::string m_className;
-
-
-};
-
+}

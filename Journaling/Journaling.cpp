@@ -14,13 +14,15 @@
 #include "JournalCallData.h"
 #include "JournalFile.h"
 
+using namespace Journal;
+
 static JournalFile* activeJournalFile = nullptr;
 
 
 static JournalingLanguage m_JournalingLanguage;
 static bool m_isJournaling = false;
 
-static JournalCallData * currentCall = nullptr;
+static Journal::JournalCallData * currentCall = nullptr;
 
 static std::map<int, std::string> m_guidToParamMap;
 

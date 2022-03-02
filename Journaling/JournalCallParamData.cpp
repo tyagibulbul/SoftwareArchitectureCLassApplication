@@ -1,5 +1,5 @@
 #include "JournalCallParamData.h"
-
+using namespace Journal;
 
 JournalCallParamData::JournalCallParamData(std::string paramName,
     ParameterMetaType paramType, ParameterBasicType parameterBasicType) :

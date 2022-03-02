@@ -4,6 +4,8 @@
 #include "JournalCallParamData.h"
 #include "..\Core\GuidObject.h"
 
+using namespace Journal;
+
 JournalCallData::JournalCallData(std::string methodName, CannedGlobals cannedGlobals)
     : m_methodName(methodName), m_cannedGlobal(cannedGlobals), m_isCanned(true), m_retVal(nullptr), m_classObject(nullptr)
 {

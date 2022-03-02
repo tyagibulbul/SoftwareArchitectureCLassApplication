@@ -4,9 +4,13 @@
 #include <vector>
 
 class GuidObject;
-class JournalFile;
+namespace Journal
+{
+	class JournalFile;
+}
 
-JournalFile* GetActiveJournalFile();
+
+Journal::JournalFile* GetActiveJournalFile();
 
 bool InGuidToParamMap(int guid);
 void AddGuidToParamMap(int guid, std::string& param);

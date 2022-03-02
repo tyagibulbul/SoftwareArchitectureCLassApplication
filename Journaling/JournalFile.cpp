@@ -2,7 +2,7 @@
 #include "JournalingTypes.h"
 #include <fstream>
 
-
+using namespace Journal;
 
 JournalFile::JournalFile(std::string fileName, JournalingLanguage jnlLang)
 	: m_journalFileName(fileName), m_jnlLang(jnlLang), m_journalContents(), m_file(new std::ofstream(fileName))

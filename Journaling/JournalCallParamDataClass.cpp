@@ -3,6 +3,8 @@
 #include "JournalFile.h"
 #include "..\Core\GuidObject.h"
 
+using namespace Journal;
+
 JournalCallParamDataClass::JournalCallParamDataClass(std::string paramName, ParameterMetaType paramType,
     GuidObject* classObject, std::string className) :
     JournalCallParamData(paramName, paramType, JournalCallParamData::ParameterBasicType::STRING), m_classObject(classObject),
