@@ -1,9 +1,10 @@
 #include "PartOps.h"
+#include "PartOpsInternal.h"
 #include <iostream>
 #include "..\Journaling\Journaling.h"
 #include "..\Journaling\JournalHelpers.h"
 #include "..\Core\GuidObject.h"
-#include "Feature.h"
+#include "..\AppLibrary\Feature.h"
 #include "..\Core\StringUtils.h"
 #include "..\Core\CoreSession.h"
 #include "..\Core\Observer.h"

@@ -1,6 +1,6 @@
 #include "MakeWidgetFeature.h"
 #include <iostream>
-#include "..\AppLibrary\PartOps.h"
+#include "..\AppPartOps\PartOps.h"
 
 
 void AddWidgetFeatureToPartUI(PartFile* partFile, bool option1, int values)

@@ -1,6 +1,6 @@
 #include "Part.h"
 #include "..\Core\GuidObject.h"
-#include "..\AppLibrary\PartOps.h"
+#include "..\AppPartOps\PartOps.h"
 #include "FeatureCollection.h"
 
 using namespace AutomationAPI;

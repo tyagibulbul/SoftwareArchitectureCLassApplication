@@ -24,6 +24,7 @@
     <ProjectGuid>{6897419d-b643-48a6-8f1a-f03a94004946}</ProjectGuid>
     <RootNamespace>PartOpsUI</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>UIPartOps</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -80,7 +81,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>PartOpsUI</TargetName>
+    <TargetName>UIPartOps</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -161,6 +162,9 @@
   <ItemGroup>
     <ProjectReference Include="..\AppLibrary\AppLibrary.vcxproj">
       <Project>{e654b7ea-f264-421d-8056-6f3c2cc7d47f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\AppPartOps\AppPartOps.vcxproj">
+      <Project>{407e33af-2ab5-40c2-8caa-33d1e07cc437}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

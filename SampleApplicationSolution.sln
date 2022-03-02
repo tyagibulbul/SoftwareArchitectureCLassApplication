@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PartOpsUI", "PartOpsUI\Part
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FeatureOpsUI", "FeatureOpsUI\FeatureOpsUI.vcxproj", "{A3306C7E-C434-43EF-88B4-FD286C0F4148}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppPartOps", "AppPartOps\AppPartOps.vcxproj", "{407E33AF-2AB5-40C2-8CAA-33D1E07CC437}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{A3306C7E-C434-43EF-88B4-FD286C0F4148}.Release|x64.Build.0 = Release|x64
 		{A3306C7E-C434-43EF-88B4-FD286C0F4148}.Release|x86.ActiveCfg = Release|Win32
 		{A3306C7E-C434-43EF-88B4-FD286C0F4148}.Release|x86.Build.0 = Release|Win32
+		{407E33AF-2AB5-40C2-8CAA-33D1E07CC437}.Debug|x64.ActiveCfg = Debug|x64
+		{407E33AF-2AB5-40C2-8CAA-33D1E07CC437}.Debug|x64.Build.0 = Debug|x64
+		{407E33AF-2AB5-40C2-8CAA-33D1E07CC437}.Debug|x86.ActiveCfg = Debug|Win32
+		{407E33AF-2AB5-40C2-8CAA-33D1E07CC437}.Debug|x86.Build.0 = Debug|Win32
+		{407E33AF-2AB5-40C2-8CAA-33D1E07CC437}.Release|x64.ActiveCfg = Release|x64
+		{407E33AF-2AB5-40C2-8CAA-33D1E07CC437}.Release|x64.Build.0 = Release|x64
+		{407E33AF-2AB5-40C2-8CAA-33D1E07CC437}.Release|x86.ActiveCfg = Release|Win32
+		{407E33AF-2AB5-40C2-8CAA-33D1E07CC437}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

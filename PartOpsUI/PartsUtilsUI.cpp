@@ -1,6 +1,6 @@
 #include "PartsUtilsUI.h"
 #include <iostream>
-#include "..\AppLibrary\PartOps.h"
+#include "..\AppPartOps\PartOps.h"
 
 void SavePartUI(PartFile* partFile)
 {

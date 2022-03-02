@@ -1,7 +1,7 @@
 #include "Session.h"
 #include "Part.h"
 #include "..\Core\Core.h"
-#include "..\AppLibrary\PartOps.h"
+#include "..\AppPartOps\PartOps.h"
 
 
 
