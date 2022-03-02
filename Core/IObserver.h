@@ -1,5 +1,5 @@
 #pragma once
-#include "Core.h"
+#include "CoreExports.h"
 #include <string>
 
 class CORE_API IObserver {

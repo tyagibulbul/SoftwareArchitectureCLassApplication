@@ -1,5 +1,5 @@
 #pragma once
-#include "AutomationBinding.h"
+#include "AutomationBindingExports.h"
 #include "ICADObject.h"
 
 namespace AutomationAPI

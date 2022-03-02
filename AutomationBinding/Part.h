@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AutomationBinding.h"
+#include "AutomationBindingExports.h"
 #include <string>
 
 

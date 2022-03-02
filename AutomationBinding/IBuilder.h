@@ -1,5 +1,5 @@
 #pragma once
-#include "AutomationBinding.h"
+#include "AutomationBindingExports.h"
 namespace AutomationAPI
 {
 	class CADObject;

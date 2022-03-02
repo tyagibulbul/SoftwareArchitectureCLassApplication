@@ -92,6 +92,7 @@
   <ItemGroup>
     <ClInclude Include="BI.h" />
     <ClInclude Include="Core.h" />
+    <ClInclude Include="CoreExports.h" />
     <ClInclude Include="CoreSession.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GuidObject.h" />

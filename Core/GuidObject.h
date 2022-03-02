@@ -1,5 +1,5 @@
 #pragma once
-#include "Core.h"
+#include "CoreExports.h"
 
 class CORE_API GuidObject
 {

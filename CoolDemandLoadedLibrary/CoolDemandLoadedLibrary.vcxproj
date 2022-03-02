@@ -90,7 +90,6 @@
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CoolDemandLoadedLibrary.h" />
     <ClInclude Include="Wire.h" />
     <ClInclude Include="WireVersions.h" />
     <ClInclude Include="RoutingFeature.h" />
@@ -98,7 +97,6 @@
     <ClInclude Include="CoolDemandLoadedLibraryExports.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CoolDemandLoadedLibrary.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Wire.cpp" />
     <ClCompile Include="WireVersions.cpp" />

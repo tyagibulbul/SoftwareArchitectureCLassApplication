@@ -1,5 +1,5 @@
 #pragma once
-#include "Core.h"
+#include "CoreExports.h"
 #include <windows.h> 
 
 CORE_API HINSTANCE LoadLibrary(const char* libraryName);

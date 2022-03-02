@@ -90,7 +90,7 @@
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AutomationBinding.h" />
+    <ClInclude Include="AutomationBindingExports.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockBuilder.h" />
     <ClInclude Include="CADObject.h" />
@@ -103,7 +103,6 @@
     <ClInclude Include="Session.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AutomationBinding.cpp" />
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlockBuilder.cpp" />
     <ClCompile Include="CADObject.cpp" />

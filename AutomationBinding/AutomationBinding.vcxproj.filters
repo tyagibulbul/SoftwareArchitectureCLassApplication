@@ -21,7 +21,7 @@
     <ClInclude Include="framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AutomationBinding.h">
+    <ClInclude Include="AutomationBindingExports.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Session.h">
@@ -53,9 +53,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AutomationBinding.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
