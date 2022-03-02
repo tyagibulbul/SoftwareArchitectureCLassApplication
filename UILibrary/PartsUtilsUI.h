@@ -1,14 +1,15 @@
 #pragma once
 
+#include "UILIbraryExports.h"
 #include <string>
-#include "..\AppLibrary\PartOps.h"
 
 
+class PartFile;
 
-PartFile* OpenPartUI(std::string);
+UILIBRARY_API PartFile* OpenPartUI(std::string);
 
-PartFile* MakePartUI(std::string);
+UILIBRARY_API PartFile* MakePartUI(std::string);
 
-void SavePartUI(PartFile* partFile);
+UILIBRARY_API void SavePartUI(PartFile* partFile);
 
 

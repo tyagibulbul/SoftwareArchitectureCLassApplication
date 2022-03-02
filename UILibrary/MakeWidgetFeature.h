@@ -1,7 +1,9 @@
 #pragma once
 
-#include "..\AppLibrary\PartOps.h"
+#include "UILIbraryExports.h"
 
-void AddWidgetFeatureToPartUI(PartFile* partFile, bool option1, int values);
+class PartFile;
+
+UILIBRARY_API void AddWidgetFeatureToPartUI(PartFile* partFile, bool option1, int values);
 
 

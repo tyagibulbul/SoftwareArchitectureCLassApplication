@@ -94,6 +94,7 @@
     <ClInclude Include="PartsUtilsUI.h" />
     <ClInclude Include="MakeWidgetFeature.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="UILIbraryExports.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />

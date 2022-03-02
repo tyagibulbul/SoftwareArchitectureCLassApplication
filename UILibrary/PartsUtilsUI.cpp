@@ -1,5 +1,6 @@
 #include "PartsUtilsUI.h"
 #include <iostream>
+#include "..\AppLibrary\PartOps.h"
 
 using namespace std;
 void SavePartUI(PartFile* partFile)
