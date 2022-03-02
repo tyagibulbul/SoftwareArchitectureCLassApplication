@@ -69,7 +69,7 @@ void SetJournalingLangauge(JournalingLanguage jnlLang)
 {
     if (m_isJournaling)
     {
-        throw new std::exception("Cannot change journal language while currently journaling");
+        throw std::exception("Cannot change journal language while currently journaling");
     }
     else
     {
@@ -87,7 +87,7 @@ void StartJournaling(std::string jnlFile)
 {
     if (m_isJournaling)
     {
-        throw new std::exception("Already Journaling , StartJournaling");
+        throw std::exception("Already Journaling , StartJournaling");
     }
     else
     {
@@ -103,7 +103,7 @@ void EndJournaling()
 {
     if (!m_isJournaling)
     {
-        throw new std::exception("Not Journaling, EndJournaling");
+        throw std::exception("Not Journaling, EndJournaling");
     }
     else
     {

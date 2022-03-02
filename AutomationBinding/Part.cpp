@@ -10,7 +10,7 @@ void AutomationAPI::Part::Save()
 	PartFile* part = dynamic_cast<PartFile*>(GuidObjectManager::GetGuidObjectManager().GetObjectFromGUID(m_guid));
 	if (part == nullptr)
 	{
-		throw new std::exception("not able to retrieve Part Object");
+		throw std::exception("not able to retrieve Part Object");
 	}
 	else
 	{
@@ -24,7 +24,7 @@ void AutomationAPI::Part::MakeWidgetFeature(bool option1, int values)
 	PartFile* part = dynamic_cast<PartFile*>(GuidObjectManager::GetGuidObjectManager().GetObjectFromGUID(m_guid));
 	if (part == nullptr)
 	{
-		throw new std::exception("not able to retrieve Part Object");
+		throw std::exception("not able to retrieve Part Object");
 	}
 	else
 	{

@@ -2,18 +2,17 @@
 #include <fstream>
 #include "..\Core\StringUtils.h"
 
-using namespace std;
 
 void ProcessBlock(std::ifstream& streamObject)
 {
-	cout << "    ProcessBlock" << endl;
+	std::cout << "    ProcessBlock" << std::endl;
 
-	string line;
+	std::string line;
 	bool done = false;
 	while (!done)
 	{
 		getline(streamObject, line);
-		cout << line << '\n';
+		std::cout << line << '\n';
 
 		if (startsWith(line, EndFeatureToken))
 		{

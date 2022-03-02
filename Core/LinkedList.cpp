@@ -2,7 +2,6 @@
 #include "LinkedList.h"
 #include <iostream>
 #include "BI.h"
-using namespace std;
 
 ILinkedList::ILinkedList() : m_count(0)
 {
@@ -80,7 +79,7 @@ PointerBasedLinkedList::~PointerBasedLinkedList()
 
 std::string PointerBasedLinkedList::toString() const
 {
-	string str = "";
+	std::string str = "";
 
 	return str;
 }
@@ -120,7 +119,7 @@ ArrayBasedLinkedList::~ArrayBasedLinkedList()
 
 std::string ArrayBasedLinkedList::toString() const
 {
-	string str = "";
+	std::string str = "";
 
 	//TODO
 

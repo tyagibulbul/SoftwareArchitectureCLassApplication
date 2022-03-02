@@ -14,7 +14,7 @@ AutomationAPI::Session* AutomationAPI::Session::GetSession()
 
 	if (!authorized || initializeProduct() != 0)
 	{
-		throw new std::exception("Not authorized to get Session, purchase license");
+		throw std::exception("Not authorized to get Session, purchase license");
 	}
 
 	return &instance;

@@ -2,11 +2,10 @@
 #include <iostream>
 #include "..\AppLibrary\PartOps.h"
 
-using namespace std;
 
 void AddWidgetFeatureToPartUI(PartFile* partFile, bool option1, int values)
 {
-	cout << "AddWidgetFeatureToPartUI was called " << option1 << " " << values << endl;
+	std::cout << "AddWidgetFeatureToPartUI was called " << option1 << " " << values << std::endl;
 	Journaling_Part_MakeWidgetFeature(partFile, option1, values);
 
 }

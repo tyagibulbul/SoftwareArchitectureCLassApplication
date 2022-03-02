@@ -18,11 +18,11 @@ void JournalCallParamDataClass::Journal()
     if (this->m_paramType == JournalCallParamData::ParameterMetaType::INPUT)
     {
 
-        throw new std::exception("NIY ");
+        throw std::exception("NIY ");
     }
     else if (this->m_paramType == JournalCallParamData::ParameterMetaType::OUTPUT)
     {
-        throw new std::exception("NIY ");
+        throw std::exception("NIY ");
     }
     else // RETURN
     {

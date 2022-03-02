@@ -2,7 +2,6 @@
 #include "Block.h"
 #include "Extrude.h"
 
-using namespace std;
 
 void ProcessFeature(std::string featureType, std::ifstream& streamObject)
 {

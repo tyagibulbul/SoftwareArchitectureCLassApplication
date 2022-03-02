@@ -36,6 +36,6 @@ dataReaderFunction DataObjectReader::GetReader(std::string name)
     catch (std::exception e)
     {
         std::string msg = "No reader registered for " + name;
-        throw new std::exception(msg.c_str());
+        throw std::exception(msg.c_str());
     }
 }

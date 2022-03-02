@@ -5,7 +5,6 @@
 #include "..\DataReader\DataObjectReader.h"
 #include "..\DataReader\\DataReaderRegistrant.h"
 
-using namespace std;
 
 std::string Wire_VersionToken = "Wire_Version:";
 std::string Wire_DistanceToken = "Wire_Distance:";
@@ -34,15 +33,15 @@ std::string Wire::GetVersion()
 void ReadInWire(std::ifstream& streamObject)
 {
 
-	cout << "    ProcessWire" << endl;
-	string line;
+	std::cout << "    ProcessWire" << std::endl;
+	std::string line;
 	getline(streamObject, line);
 
 	//IExtrude* extrudeReadIn = nullptr;
 	void* wireReadIn = nullptr;
 
 	std::string version = line.substr(Wire_VersionToken.size(), line.size() - Wire_VersionToken.size());
-	cout << "    " << Wire_VersionToken << " " << version << endl;
+	std::cout << "    " << Wire_VersionToken << " " << version << std::endl;
 
 	std::string WireVersionToken = "Wire" + version;
 
@@ -83,7 +82,7 @@ void ReadInWire(std::ifstream& streamObject)
 
 void * ReadWireVersion2(std::ifstream& streamObject)
 {
-	string line;
+	std::string line;
 
 	std::string distance;
 
@@ -92,7 +91,7 @@ void * ReadWireVersion2(std::ifstream& streamObject)
 	while (!done)
 	{
 		getline(streamObject, line);
-		cout << line << '\n';
+		std::cout << line << '\n';
 
 
 
@@ -104,7 +103,7 @@ void * ReadWireVersion2(std::ifstream& streamObject)
 		else if (startsWith(line, Wire_DistanceToken))
 		{
 			distance = line.substr(Wire_DistanceToken.size(), line.size() - Wire_DistanceToken.size());
-			cout << "    " << Wire_DistanceToken << " " << distance << endl;
+			std::cout << "    " << Wire_DistanceToken << " " << distance << std::endl;
 		}
 
 	}
@@ -119,7 +118,7 @@ void * ReadWireVersion2(std::ifstream& streamObject)
 void * ReadWireVersion3(std::ifstream& streamObject)
 {
 
-	throw new exception("NIY");
+	throw std::exception("NIY");
 
 	return nullptr;
 
@@ -137,7 +136,7 @@ Wire* VersionUpWireVersion2(Wire2 * oldFeature)
 	std::string isAddition;
 	std::string isSubtraction;
 
-	cout << "    VersionUpExtrudeVersion2" <<  endl;
+	std::cout << "    VersionUpExtrudeVersion2" << std::endl;
 
 
 	retval = new Wire(distance);

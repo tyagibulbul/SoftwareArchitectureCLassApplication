@@ -11,8 +11,6 @@
 #include "..\Core\Core.h"
 
 
-using namespace std;
-
 
 
 void RunTests();

@@ -5,7 +5,6 @@
 #include "..\DataReader\DataObjectReader.h"
 #include "..\DataReader\\DataReaderRegistrant.h"
 
-using namespace std;
 
 std::string Extrude_VersionToken = "Extrude_Version:";
 std::string Extrude_DistanceToken = "Extrude_Distance:";
@@ -39,15 +38,15 @@ std::string Extrude::GetVersion()
 void ReadInExtrude(std::ifstream& streamObject)
 {
 
-	cout << "    ProcessExtrude" << endl;
-	string line;
+	std::cout << "    ProcessExtrude" << std::endl;
+	std::string line;
 	getline(streamObject, line);
 
 	//IExtrude* extrudeReadIn = nullptr;
 	void* extrudeReadIn = nullptr;
 
 	std::string version = line.substr(Extrude_VersionToken.size(), line.size() - Extrude_VersionToken.size());
-	cout << "    " << Extrude_VersionToken << " " << version << endl;
+	std::cout << "    " << Extrude_VersionToken << " " << version << std::endl;
 
 	std::string ExtrudeVersionToken = "Extrude" + version;
 
@@ -105,7 +104,7 @@ void ReadInExtrude(std::ifstream& streamObject)
 
 void * ReadExtrudeVersion2(std::ifstream& streamObject)
 {
-	string line;
+	std::string line;
 
 	std::string distance;
 	std::string targetFace;
@@ -116,7 +115,7 @@ void * ReadExtrudeVersion2(std::ifstream& streamObject)
 	while (!done)
 	{
 		getline(streamObject, line);
-		cout << line << '\n';
+		std::cout << line << '\n';
 
 
 
@@ -128,22 +127,22 @@ void * ReadExtrudeVersion2(std::ifstream& streamObject)
 		else if (startsWith(line, Extrude_DistanceToken))
 		{
 			distance = line.substr(Extrude_DistanceToken.size(), line.size() - Extrude_DistanceToken.size());
-			cout << "    " << Extrude_DistanceToken << " " << distance << endl;
+			std::cout << "    " << Extrude_DistanceToken << " " << distance << std::endl;
 		}
 		else if (startsWith(line, Extrude_TargetFaceToken))
 		{
 			targetFace = line.substr(Extrude_TargetFaceToken.size(), line.size() - Extrude_TargetFaceToken.size());
-			cout << "    " << Extrude_TargetFaceToken << " " << targetFace << endl;
+			std::cout << "    " << Extrude_TargetFaceToken << " " << targetFace << std::endl;
 		}
 		else if (startsWith(line, Extrude_VectorToken))
 		{
 			vectorObject = line.substr(Extrude_VectorToken.size(), line.size() - Extrude_VectorToken.size());
-			cout << "    " << Extrude_VectorToken << " " << vectorObject << endl;
+			std::cout << "    " << Extrude_VectorToken << " " << vectorObject << std::endl;
 		}
 		else if (startsWith(line, Extrude_BooleanToken))
 		{
 			booleanType = line.substr(Extrude_BooleanToken.size(), line.size() - Extrude_BooleanToken.size());
-			cout << "    " << Extrude_BooleanToken << " " << booleanType << endl;
+			std::cout << "    " << Extrude_BooleanToken << " " << booleanType << std::endl;
 		}
 
 	}
@@ -158,7 +157,7 @@ void * ReadExtrudeVersion2(std::ifstream& streamObject)
 void * ReadExtrudeVersion3(std::ifstream& streamObject)
 {
 
-	throw new exception("NIY");
+	throw std::exception("NIY");
 
 	return nullptr;
 
@@ -179,7 +178,7 @@ Extrude* VersionUpExtrudeVersion2(Extrude2 * oldFeature)
 	std::string isAddition;
 	std::string isSubtraction;
 
-	cout << "    VersionUpExtrudeVersion2" <<  endl;
+	std::cout << "    VersionUpExtrudeVersion2" << std::endl;
 
 	if (booleanType == "Intersect")
 	{
@@ -188,7 +187,7 @@ Extrude* VersionUpExtrudeVersion2(Extrude2 * oldFeature)
 	}
 	else
 	{
-		throw new exception("NIY");
+		throw std::exception("NIY");
 	}
 
 	retval = new Extrude(distance, targetFace, vectorObject, isAddition, isSubtraction);

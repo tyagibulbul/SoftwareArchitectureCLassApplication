@@ -2,10 +2,9 @@
 #include <iostream>
 #include "..\AppLibrary\PartOps.h"
 
-using namespace std;
 void SavePartUI(PartFile* partFile)
 {
-	cout << "SavePartUI was called" << endl;
+	std::cout << "SavePartUI was called" << std::endl;
 	
 	Journaling_Part_Save(partFile);
 	
@@ -13,7 +12,7 @@ void SavePartUI(PartFile* partFile)
 
 PartFile* MakePartUI(std::string s)
 {
-	cout << "MakePartUI was called with args " << s << endl;
+	std::cout << "MakePartUI was called with args " << s << std::endl;
 
 	return Journaling_MakePart(s);
 
@@ -22,7 +21,7 @@ PartFile* MakePartUI(std::string s)
 
 PartFile* OpenPartUI(std::string s)
 {
-	cout << "OpenPartUI was called with args " << s << endl;
+	std::cout << "OpenPartUI was called with args " << s << std::endl;
 
 	return Journaling_OpenPart(s);
 
