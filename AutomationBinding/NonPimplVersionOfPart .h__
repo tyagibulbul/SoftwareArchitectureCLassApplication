@@ -9,7 +9,6 @@ namespace AutomationAPI
 
 	class FeatureCollection;
 	class RoutingCollection;
-	class PartImpl;
 
 	class AUTOMATIONBINDING_API Part
 	{
@@ -41,12 +40,13 @@ namespace AutomationAPI
 			static Part* CreatePart(int guid);
 
 			virtual ~Part();
-			Part() = delete;
 
 		private:
-			
+			Part();
 			Part(int guid);
-			PartImpl *m_partImpl;
+			int m_guid;
+			FeatureCollection * m_featureCollection;
+			RoutingCollection* m_routingCollection;
 
 	};
 

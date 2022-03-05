@@ -1,4 +1,6 @@
 #include "FeatureCollection.h"
+#include "Block.h"
+#include "BlockBuilder.h"
 #include <iostream>
 
 AutomationAPI::FeatureCollection::FeatureCollection(int guid) : m_guid(guid)

@@ -88,9 +88,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
+    <None Include="NonPimplVersionOfPart .h__" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutomationBindingExports.h" />
+    <ClInclude Include="Wire.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockBuilder.h" />
     <ClInclude Include="CADObject.h" />
@@ -100,7 +102,9 @@
     <ClInclude Include="IBuilder.h" />
     <ClInclude Include="ICADObject.h" />
     <ClInclude Include="Part.h" />
+    <ClInclude Include="RoutingCollection.h" />
     <ClInclude Include="Session.h" />
+    <ClInclude Include="WireBuilder.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Block.cpp" />
@@ -111,7 +115,10 @@
     <ClCompile Include="FeatureCollection.cpp" />
     <ClCompile Include="IBuilder.cpp" />
     <ClCompile Include="Part.cpp" />
+    <ClCompile Include="RoutingCollection.cpp" />
     <ClCompile Include="Session.cpp" />
+    <ClCompile Include="Wire.cpp" />
+    <ClCompile Include="WireBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppLibrary\AppLibrary.vcxproj">
