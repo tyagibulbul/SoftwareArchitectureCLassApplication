@@ -13,8 +13,6 @@ std::string Extrude_VectorToken = "Extrude_Vector:";
 std::string Extrude_BooleanToken = "Extrude_Boolean:";
 
 
-//Extrude2* ReadExtrudeVersion2(std::ifstream& streamObject);
-//Extrude * ReadExtrudeVersion3(std::ifstream& streamObject);
 void* ReadExtrudeVersion2(std::ifstream& streamObject);
 void* ReadExtrudeVersion3(std::ifstream& streamObject);
 
@@ -42,7 +40,6 @@ void ReadInExtrude(std::ifstream& streamObject)
 	std::string line;
 	getline(streamObject, line);
 
-	//IExtrude* extrudeReadIn = nullptr;
 	void* extrudeReadIn = nullptr;
 
 	std::string version = line.substr(Extrude_VersionToken.size(), line.size() - Extrude_VersionToken.size());
@@ -59,24 +56,6 @@ void ReadInExtrude(std::ifstream& streamObject)
 		extrudeReadIn = readerFunc(streamObject);
 	}
 	
-
-	//if (version=="1")
-	//{
-	//	throw new exception("NIY");
-	//}
-	//else if (version == "2")
-	//{
-	//	extrudeReadIn = ReadExtrudeVersion2(streamObject);
-	//}
-	//else if (version == "3")
-	//{
-	//	extrudeReadIn = ReadExtrudeVersion3(streamObject);
-	//}
-	//else
-	//{
-	//	throw new exception("Unknown version of Exception");
-	//}
-
 	IExtrude* extrudeReadInterface = (IExtrude*)extrudeReadIn;
 
 	Extrude* retVal = dynamic_cast<Extrude*>(extrudeReadInterface);
@@ -99,7 +78,7 @@ void ReadInExtrude(std::ifstream& streamObject)
 	{
 		return; // We woudl probably like to return this retVal
 	}
-
+	// TODO I believe we are leaking the Extrude Object here :(
 }
 
 void * ReadExtrudeVersion2(std::ifstream& streamObject)
