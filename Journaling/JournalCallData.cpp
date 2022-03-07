@@ -84,7 +84,7 @@ void JournalCallData::Journal()
         m_params[i]->Journal();
     }
 
-    static std::string endParam = std::string(")");
+    static std::string endParam = std::string(");");
     GetActiveJournalFile()->WriteToFile(endParam);
     GetActiveJournalFile()->NewLine();
 
