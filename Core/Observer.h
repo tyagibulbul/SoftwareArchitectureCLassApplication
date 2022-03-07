@@ -9,7 +9,7 @@ class CORE_API Observer : public IObserver
     public:
 
         Observer(CoreSession& coreSesssion, EventTypes eventType) ;
-        virtual ~Observer();
+        ~Observer() override;
         void Update(const std::string& message_from_subject) override;
         void RemoveMeFromTheList();
         void PrintInfo();

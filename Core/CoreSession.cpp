@@ -32,16 +32,16 @@ CoreSession::~CoreSession() {
  * The subscription management methods.
  */
 void CoreSession::Attach(IObserver* observer)  {
-    list_observer_.push_back(observer);
+    m_listObserver.push_back(observer);
 }
 void CoreSession::Detach(IObserver* observer)  {
-    list_observer_.remove(observer);
+    m_listObserver.remove(observer);
 }
 void CoreSession::Notify()  {
-    std::list<IObserver*>::iterator iterator = list_observer_.begin();
+    std::list<IObserver*>::iterator iterator = m_listObserver.begin();
     HowManyObserver();
-    while (iterator != list_observer_.end()) {
-        (*iterator)->Update(message_);
+    while (iterator != m_listObserver.end()) {
+        (*iterator)->Update(m_message);
         ++iterator;
     }
 }
@@ -75,9 +75,9 @@ static std::string  GenerateMessageFromEvent(Observer::EventTypes eventType)
 
 void CoreSession::Notify(Observer::EventTypes eventType) 
 {
-    std::list<IObserver*>::iterator iterator = list_observer_.begin();
+    std::list<IObserver*>::iterator iterator = m_listObserver.begin();
     HowManyObserver();
-    while (iterator != list_observer_.end()) 
+    while (iterator != m_listObserver.end()) 
     {
         Observer* observer = dynamic_cast<Observer*>(*iterator);
         if (observer != nullptr && observer->UpdateOnEventType(eventType))
@@ -96,11 +96,11 @@ void CoreSession::CreateMessage(Observer::EventTypes eventType)
 }
 
 void CoreSession::CreateMessage(std::string message ) {
-    this->message_ = message;
+    this->m_message = message;
     Notify();
 }
 void CoreSession::HowManyObserver() {
-    std::cout << "There are " << list_observer_.size() << " observers in the list.\n";
+    std::cout << "There are " << m_listObserver.size() << " observers in the list.\n";
 }
 
 

@@ -15,7 +15,7 @@ class CORE_API CoreSession : ISubject
         void operator=(CoreSession const&) = delete;
 
 
-        virtual ~CoreSession();
+        ~CoreSession() override;
 
         /**
          * The subscription management methods.
@@ -34,8 +34,8 @@ class CORE_API CoreSession : ISubject
         void SetupDefaultObservers();
 
 private:
-    std::list<IObserver*> list_observer_;
-    std::string message_;
+    std::list<IObserver*> m_listObserver;
+    std::string m_message;
     CoreSession();
     Observer* m_observerForSavePart; 
     Observer* m_observerForClosePart;
