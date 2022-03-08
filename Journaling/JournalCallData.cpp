@@ -78,10 +78,16 @@ void JournalCallData::Journal()
     std::string jnlString = this->m_methodName + beginParam;
 
     GetActiveJournalFile()->WriteToFile(jnlString);
-
+    static std::string commaString = std::string(",");
     for (int i = 0; i < m_params.size(); i++)
-    {
+    {    
+        //If more than 1 parameter, put in comma
+        if (i > 0)
+        {
+            GetActiveJournalFile()->WriteToFile(commaString);
+        }
         m_params[i]->Journal();
+
     }
 
     static std::string endParam = std::string(");");

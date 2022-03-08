@@ -10,5 +10,5 @@ AutomationAPI::Part * Part1 = mySession->MakePart("d:\\workdir\\someDir\\SomeNam
 Part1->MakeWidgetFeature(true,10);
 Part1->Save();
 AutomationAPI::Part * Part2 = mySession->OpenPart("C:\\Users\\polek\\source\\repos\\AutomationAPI_pt2\\SampleVersionUp.prt");
-
+Part2->Save();
 }
