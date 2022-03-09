@@ -22,7 +22,7 @@ class CORE_API CoreSession : ISubject
          */
         void Attach(IObserver* observer) override;
         void Detach(IObserver* observer) override;
-        void Notify() override;
+        void NotifyAll() override;
         void Notify(IObserver::EventTypes eventType) override;
 
         void CreateMessage(IObserver::EventTypes eventType);

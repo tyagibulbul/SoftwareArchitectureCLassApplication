@@ -37,7 +37,7 @@ void CoreSession::Attach(IObserver* observer)  {
 void CoreSession::Detach(IObserver* observer)  {
     m_listObserver.remove(observer);
 }
-void CoreSession::Notify()  {
+void CoreSession::NotifyAll()  {
     std::list<IObserver*>::iterator iterator = m_listObserver.begin();
     HowManyObserver();
     while (iterator != m_listObserver.end()) {
@@ -97,7 +97,7 @@ void CoreSession::CreateMessage(Observer::EventTypes eventType)
 
 void CoreSession::CreateMessage(std::string message ) {
     this->m_message = message;
-    Notify();
+    NotifyAll();
 }
 void CoreSession::HowManyObserver() {
     std::cout << "There are " << m_listObserver.size() << " observers in the list.\n";
