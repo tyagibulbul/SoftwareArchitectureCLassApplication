@@ -10,7 +10,10 @@ namespace AutomationAPI
 	class FeatureCollection;
 	class RoutingCollection;
 	class PartImpl;
-
+	/// <summary>
+	/// Represents a part file in our sample CAD application.
+	/// </summary>
+	/// An instance of this object can be obtained from the class [Session](@ref Session)
 	class AUTOMATIONBINDING_API Part
 	{
 		public :

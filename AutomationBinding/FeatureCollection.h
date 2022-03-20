@@ -4,7 +4,9 @@ namespace AutomationAPI
 {
 	class BlockBuilder;
 	class Block;
-
+	/// <summary>
+	/// FeatureCollection comment
+	/// </summary>
 	class AUTOMATIONBINDING_API FeatureCollection
 	{
 		public:

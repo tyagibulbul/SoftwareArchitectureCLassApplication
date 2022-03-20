@@ -7,7 +7,9 @@ namespace AutomationAPI
 	class CADObject;
 
 
-
+	/// <summary>
+	/// WireBuilder comment
+	/// </summary>
 	class AUTOMATIONBINDING_API WireBuilder : public IBuilder
 	{
 		public:

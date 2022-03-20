@@ -4,7 +4,9 @@ namespace AutomationAPI
 {
 	class WireBuilder;
 	class Wire;
-
+	/// <summary>
+	/// RoutingCollection comment
+	/// </summary>
 	class AUTOMATIONBINDING_API RoutingCollection
 	{
 		public:

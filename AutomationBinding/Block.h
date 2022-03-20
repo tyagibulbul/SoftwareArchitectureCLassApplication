@@ -4,6 +4,9 @@
 
 namespace AutomationAPI
 {
+	/// <summary>
+	/// Block comment
+	/// </summary>
 	class Block : CADObject
 	{
 		public:

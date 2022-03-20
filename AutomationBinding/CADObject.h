@@ -4,6 +4,9 @@
 
 namespace AutomationAPI
 {
+	/// <summary>
+	/// CADObject comment
+	/// </summary>
 	class CADObject : ICADObject
 	{
 		public:

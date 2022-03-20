@@ -7,9 +7,17 @@
 namespace AutomationAPI
 {
 	class Part;
+	/// <summary>
+	/// This represents an Session object which is needed for any automation workflow.
+	/// </summary>
 	class AUTOMATIONBINDING_API Session
 	{
 		public :
+			/// <summary>
+			/// This method should be called first in any automation program.
+			/// </summary>
+			/// This class is used as the starting point in any automation workflow.
+			/// <returns>Generates and\or returns the Session object.</returns>
 			static Session* GetSession();
 
 			/**

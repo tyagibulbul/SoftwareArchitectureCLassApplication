@@ -4,6 +4,9 @@
 
 namespace AutomationAPI
 {
+	/// <summary>
+	/// Extrude object
+	/// </summary>
 	class AUTOMATIONBINDING_API Extrude : CADObject
 	{
 

@@ -4,6 +4,9 @@
 
 namespace AutomationAPI
 {
+	/// <summary>
+	/// Wire comment
+	/// </summary>
 	class Wire : CADObject
 	{
 		public:

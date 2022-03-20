@@ -7,7 +7,9 @@ namespace AutomationAPI
 	class CADObject;
 
 
-
+	/// <summary>
+	/// BlockBuilder comment
+	/// </summary>
 	class AUTOMATIONBINDING_API BlockBuilder : public IBuilder
 	{
 		public:
