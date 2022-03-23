@@ -19,6 +19,7 @@
     <None Include="NonPimplVersionOfPart .h__">
       <Filter>Header Files</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">

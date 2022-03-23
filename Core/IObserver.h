@@ -14,4 +14,5 @@ public:
 
     virtual ~IObserver() {};
     virtual void Update(const std::string& message_from_subject) = 0;
+    virtual void Update(const std::string& message_from_subject, void* data) = 0;
 };

@@ -16,14 +16,17 @@ namespace AutomationAPI
 			/// <summary>
 			/// This method should be called first in any automation program.
 			/// </summary>
-			/// This class is used as the starting point in any automation workflow.
+			/// This is used as the starting point in any automation workflow.
 			/// <returns>Generates and\or returns the Session object.</returns>
 			static Session* GetSession();
 
-			/**
-			*<summary> Generates the Part File at the path specificed</summary>
-			* To save the part afterward  use [Part.Save()](@ref Part.Save())
-			*/
+
+			/// <summary>
+			/// Generates the Part File at the path specificed
+			/// </summary>
+			/// To save the part afterward  use [Part.Save()](@ref Part.Save())
+			/// <param name="partFilePath">The path to the file to be created</param>
+			/// <returns>The part created </returns>
 			Part* MakePart(std::string partFilePath);
 
 			/**

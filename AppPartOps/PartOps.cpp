@@ -1,5 +1,6 @@
 #include "PartOps.h"
 #include "PartOpsInternal.h"
+#include "DelMeBadPattern.h"
 #include <iostream>
 #include "..\Journaling\Journaling.h"
 #include "..\Journaling\JournalHelpers.h"
@@ -98,13 +99,25 @@ PartFile::PartFile(std::string partFilePath, int guid) : GuidObject(guid),  m_pa
 void PartFile::ClosePart()
 {
 	cout << "    PartFile::ClosePart called" << endl;
-	CoreSession::GetInstance().CreateMessage(Observer::ClosePart);
+
+	PartOpsNotifierData partOpsNotifierData;
+	partOpsNotifierData.guid = this->GetGuid();
+	partOpsNotifierData.partName = this->m_partFilePath;
+	PartOpsNotifierData* ptr = &partOpsNotifierData;
+
+	CoreSession::GetInstance().CreateMessage(Observer::ClosePart, (void*)ptr);
 }
 
 void PartFile::SavePart()
 {
 	cout << "    PartFile::SavePart called" << endl;
-	CoreSession::GetInstance().CreateMessage(Observer::SavePart);
+
+	PartOpsNotifierData partOpsNotifierData;
+	partOpsNotifierData.guid = this->GetGuid();
+	partOpsNotifierData.partName = this->m_partFilePath;
+	PartOpsNotifierData* ptr = &partOpsNotifierData;
+
+	CoreSession::GetInstance().CreateMessage(Observer::SavePart, (void*)ptr);
 }
 
 void PartFile::MakeWidgetFeature(bool option1, int values)
@@ -118,7 +131,13 @@ PartFile* PartFile::CreatePartFile(std::string partFilePath)
 
 	PartFile* partFile = new PartFile( partFilePath, guid);
 	GuidObjectManager::GetGuidObjectManager().SetObjectFromGUID(guid, partFile);
-	CoreSession::GetInstance().CreateMessage(Observer::CreatePart);
+
+	PartOpsNotifierData partOpsNotifierData;
+	partOpsNotifierData.guid = guid;
+	partOpsNotifierData.partName = partFilePath;
+	PartOpsNotifierData* ptr = &partOpsNotifierData;
+
+	CoreSession::GetInstance().CreateMessage(Observer::CreatePart, (void*)ptr);
 	return partFile;
 }
 
@@ -131,9 +150,14 @@ PartFile* PartFile::OpenPartFile(std::string partFilePath)
 
 	PartFile* partFile = new PartFile(partFilePath, guid);
 	GuidObjectManager::GetGuidObjectManager().SetObjectFromGUID(guid, partFile);
+	
+	PartOpsNotifierData partOpsNotifierData;
+	partOpsNotifierData.guid = guid;
+	partOpsNotifierData.partName = partFilePath;
+	PartOpsNotifierData* ptr = &partOpsNotifierData;
 
+	CoreSession::GetInstance().CreateMessage(Observer::OpenPart, (void*)ptr);
 
-	CoreSession::GetInstance().CreateMessage(Observer::OpenPart);
 	return partFile;
 }
 
