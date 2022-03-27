@@ -112,9 +112,9 @@ void UI::PerformJavaAutomationWorkflow()
 	std::string baseString = BasePath();
 	std::cout << "baseString " << baseString << std::endl;
 	//RunJavaProgram1("FirstProgram");
-	RunJavaProgram2(BasePath() + "\\SimpleHelloWorldJava\\HelloWorld.class");
+	RunJavaProgramWithClassLoader(BasePath() + "\\SimpleHelloWorldJava\\HelloWorld.class");
 
-	RunJavaProgram2(BasePath() + "\\FakeAutomationJava\\CallFakeJavaAutomation.class");
+	RunJavaProgramWithClassLoader(BasePath() + "\\FakeAutomationJava\\CallFakeJavaAutomation.class");
 	DestroyJVM();
 
 #endif

@@ -5,8 +5,8 @@
 
 extern JAVALOADER_API void CreateJVM();
 
-extern JAVALOADER_API void RunJavaProgram1(std::string msg);
-extern JAVALOADER_API void RunJavaProgram2(std::string classFile);
+extern JAVALOADER_API void RunJavaProgramWithOutClassLoader(std::string msg);
+extern JAVALOADER_API void RunJavaProgramWithClassLoader(std::string classFile);
 
 extern JAVALOADER_API void DestroyJVM();
 

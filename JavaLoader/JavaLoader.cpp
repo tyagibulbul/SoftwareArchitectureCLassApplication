@@ -5,6 +5,7 @@
 
 #include <jni.h>
 #include <iostream>
+#include "..\Core\CoreUtils.h"
 
 static JavaVM* javaVM = nullptr;
 
@@ -14,7 +15,8 @@ void CreateJVM()
     JNIEnv* env;       /* pointer to native method interface */
     JavaVMInitArgs vm_args; /* JDK/JRE 6 VM initialization arguments */
     JavaVMOption* options = new JavaVMOption[1];
-    options[0].optionString = _strdup("-Djava.class.path=C:\\Users\\polek\\source\\repos\\JNI_JVM_example\\CustomClassLoader");
+    std::string tmp = "-Djava.class.path=" + BasePath() + "\\CustomClassLoader";
+    options[0].optionString = _strdup(tmp.c_str());
     //options[0].optionString = _strdup("-Djava.class.path=C:\\Users\\polek\\source\\repos\\JNI_JVM_example\\SimpleHelloWorldJava");
 
     vm_args.version = JNI_VERSION_10;
@@ -32,7 +34,7 @@ void CreateJVM()
 }
 
 
-void RunJavaProgram1(std::string msg)
+void RunJavaProgramWithOutClassLoader(std::string msg)
 {
     JNIEnv* env;
     javaVM->GetEnv((void**)&env, JNI_VERSION_10);
@@ -62,7 +64,7 @@ void RunJavaProgram1(std::string msg)
     }
 }
 
-void RunJavaProgram2(std::string msg)
+void RunJavaProgramWithClassLoader(std::string msg)
 {
     JNIEnv* env;
     javaVM->GetEnv((void**)&env, JNI_VERSION_10);
