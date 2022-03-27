@@ -55,6 +55,9 @@
     <ClInclude Include="CoreExports.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CoreUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core.cpp">
@@ -82,6 +85,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Observer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreUtiles.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

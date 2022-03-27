@@ -109,6 +109,9 @@
     <ProjectReference Include="..\FeatureOpsUI\FeatureOpsUI.vcxproj">
       <Project>{a3306c7e-c434-43ef-88b4-fd286c0f4148}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\JavaLoader\JavaLoader.vcxproj">
+      <Project>{0ac36fab-0407-4c2a-9d3c-df0a704fa2c1}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Journaling\Journaling.vcxproj">
       <Project>{3ed245ab-f27b-4166-8e34-f5f0f355bf0a}</Project>
     </ProjectReference>

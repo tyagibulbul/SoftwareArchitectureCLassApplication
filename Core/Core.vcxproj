@@ -95,6 +95,7 @@
     <ClInclude Include="Core.h" />
     <ClInclude Include="CoreExports.h" />
     <ClInclude Include="CoreSession.h" />
+    <ClInclude Include="CoreUtils.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GuidObject.h" />
     <ClInclude Include="IObserver.h" />
@@ -108,6 +109,7 @@
     <ClCompile Include="BI.cpp" />
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="CoreSession.cpp" />
+    <ClCompile Include="CoreUtiles.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="GuidObject.cpp" />
     <ClCompile Include="LibraryLoad.cpp" />
