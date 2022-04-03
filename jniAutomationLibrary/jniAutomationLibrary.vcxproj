@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;JNIAUTOMATIONLIBRARY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>%JDK_HOME%\include;%JDK_HOME%\include\win32</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\TempJavaStuff\JavaIncludes\win32;$(SolutionDir)\TempJavaStuff\JavaIncludes</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

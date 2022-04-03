@@ -3,25 +3,33 @@
 #include "Feature.h"
 #include <iostream>
 #include <fstream>
-
+#include "..\Core\GuidObject.h"
 
 void ReadInExtrude(std::ifstream& streamObject);
 
-class APPLIBRARY_API IExtrude 
-{
-public:
-	virtual std::string GetVersion() = 0;
-
-};
-
 namespace Application
 {
+	class APPLIBRARY_API IExtrude : public GuidObject
+	{
+	public:
+		virtual std::string GetVersion() = 0;
+		IExtrude(int guid) : GuidObject(guid)
+		{
+
+		}
+	};
+
+
 	class APPLIBRARY_API Extrude : public Application::Feature, public IExtrude
 	{
 	public:
 		Extrude() = delete;
 		Extrude(std::string distance, std::string targetFace, std::string vectorObject, std::string isAddition, std::string isSubtraction, int m_guid);
 		std::string GetVersion() override;
+		virtual ~Extrude()
+		{
+
+		}
 
 		const std::string& GetDistance()
 		{

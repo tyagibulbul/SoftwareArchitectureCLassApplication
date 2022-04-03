@@ -14,8 +14,8 @@ std::string Extrude_BooleanToken = "Extrude_Boolean:";
 std::string Extrude_GuidToken = "Extrude_Guid:";
 
 
-void* ReadExtrudeVersion2(std::ifstream& streamObject);
-void* ReadExtrudeVersion3(std::ifstream& streamObject);
+GuidObject* ReadExtrudeVersion2(std::ifstream& streamObject);
+GuidObject* ReadExtrudeVersion3(std::ifstream& streamObject);
 
 Application::Extrude* VersionUpExtrudeVersion2(Application::Extrude2* oldFeature);
 
@@ -25,7 +25,7 @@ static DataReaderRegistrant extrude3registrant("Extrude3", ReadExtrudeVersion3);
 
 
 Application::Extrude::Extrude(std::string distance, std::string targetFace, std::string vectorObject, std::string isAddition, std::string isSubtraction, int guid)
-	: Application::Feature(guid), m_distance(distance), m_targetFace(targetFace), m_vectorObject(vectorObject), m_isAddition(isAddition), m_isSubtraction(isSubtraction)
+	: Application::IExtrude(guid), m_distance(distance), m_targetFace(targetFace), m_vectorObject(vectorObject), m_isAddition(isAddition), m_isSubtraction(isSubtraction)
 {
 
 }
@@ -57,11 +57,15 @@ void ReadInExtrude(std::ifstream& streamObject)
 		extrudeReadIn = readerFunc(streamObject);
 	}
 	
-	IExtrude* extrudeReadInterface = (IExtrude*)extrudeReadIn;
+	Application::IExtrude* extrudeReadInterface = (Application::IExtrude*)extrudeReadIn;
+
+	Application::IExtrude* retVal2 = dynamic_cast<Application::IExtrude*>(extrudeReadInterface);
 
 	Application::Extrude* retVal = dynamic_cast<Application::Extrude*>(extrudeReadInterface);
 
-	if (dynamic_cast<Application::Extrude*>(extrudeReadInterface) == nullptr)
+	Application::Extrude2* retVal3 = dynamic_cast<Application::Extrude2*>(retVal2);
+
+	if (retVal == nullptr)
 	{
 		if (version == "1")
 		{
@@ -82,7 +86,7 @@ void ReadInExtrude(std::ifstream& streamObject)
 	// TODO I believe we are leaking the Extrude Object here :(
 }
 
-void * ReadExtrudeVersion2(std::ifstream& streamObject)
+GuidObject * ReadExtrudeVersion2(std::ifstream& streamObject)
 {
 	std::string line;
 
@@ -90,7 +94,7 @@ void * ReadExtrudeVersion2(std::ifstream& streamObject)
 	std::string targetFace;
 	std::string vectorObject;
 	std::string booleanType;
-	int guid;
+	int guid = -1;
 
 	bool done = false;
 	while (!done)
@@ -141,7 +145,7 @@ void * ReadExtrudeVersion2(std::ifstream& streamObject)
 }
 
 
-void * ReadExtrudeVersion3(std::ifstream& streamObject)
+GuidObject* ReadExtrudeVersion3(std::ifstream& streamObject)
 {
 
 	throw std::exception("NIY");

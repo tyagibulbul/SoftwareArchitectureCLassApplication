@@ -10,6 +10,12 @@ namespace Application
 		Extrude2(std::string distance, std::string targetFace, std::string vectorObject, std::string booleanType, int m_guid);
 		std::string GetVersion() override;
 
+		virtual ~Extrude2()
+		{
+
+		}
+		Extrude2() = delete;
+
 		const std::string& GetDistance()
 		{
 			return m_distance;

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "AppFeaturesOpsExports.h"
-#include "..\Core\GuidObject.h"
+
 #include <iostream>
 #include <fstream>
 
@@ -13,14 +13,9 @@ APPLIBRARY_API void ProcessFeature(std::string featureType, std::ifstream& strea
 
 namespace Application
 {
-	class APPLIBRARY_API Feature : public GuidObject
+	class APPLIBRARY_API Feature 
 	{
 		public:
-			Feature() = delete;
-			Feature(int guid) : GuidObject(guid)
-			{
-
-			}
 
 
 	};

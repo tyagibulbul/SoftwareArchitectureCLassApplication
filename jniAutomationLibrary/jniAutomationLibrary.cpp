@@ -30,7 +30,7 @@ JNIEXPORT jstring JNICALL Java_FakeAutomationJava_DoSomeStuff
 
 	Application::PartFile* partFile = Journaling_Session_OpenPart(BasePath() + "\\SampleVersionUp.prt");
 
-	int guid = partFile->GetGuid();
+	//int guid = partFile->GetGuid();
 
 
 	retVal = env->NewStringUTF(stringToBuild.c_str());
