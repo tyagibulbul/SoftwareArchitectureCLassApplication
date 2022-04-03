@@ -47,7 +47,7 @@ void UI::Init()
 
 void UI::StartGUILoop()
 {
-	int WorkFlowToRun = 1;
+	int WorkFlowToRun = 2;
 
 	if (WorkFlowToRun == 1)
 	{
@@ -102,7 +102,7 @@ void UI::PerformSampleJournalingPartsOps()
 	EndJournaling();
 
 	std::cout << "Before Loaded Library" << std::endl;
-	HINSTANCE handle = LoadLibrary("COOLDEMANDLOADEDLIBRARY.dll");
+	HINSTANCE handle = CoreLoadLibrary("COOLDEMANDLOADEDLIBRARY.dll");
 	std::cout << "After Loaded Library" << std::endl;
 	UnloadLibrary(handle);
 	std::cout << "After UnLoaded Library" << std::endl;

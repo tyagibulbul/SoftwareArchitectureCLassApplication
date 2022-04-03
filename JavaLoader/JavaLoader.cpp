@@ -6,12 +6,42 @@
 #include <jni.h>
 #include <iostream>
 #include "..\Core\CoreUtils.h"
+#include "..\Core\LibraryLoad.h"
+#include <fstream>
 
 static JavaVM* javaVM = nullptr;
+
+typedef jint(*createJVMFuncPointer_t)(JavaVM** p_vm, void** p_env, void* vm_arg);
 
 
 void CreateJVM()
 {
+    //Get ENV
+    char* jdkHomeENV;
+    size_t len;
+    errno_t err = _dupenv_s(&jdkHomeENV, &len, "JDK_HOME");
+
+    if (err || jdkHomeENV == nullptr)
+    {
+        std::cout << "Can't create a JVM without knowing where it is at " << std::endl;
+        // Can't create a JVM without knowing where it is at
+        return;
+    }
+    std::string jvmLibPath = std::string(jdkHomeENV) + "\\bin\\server\\jvm.dll";
+    // Verify location of libjvm
+    bool libExists = std::ifstream(jvmLibPath).good();
+    if (!libExists)
+    {
+        std::cout << "File does exist :  " << jvmLibPath << std::endl;
+        return;
+    }
+
+    // Load library
+    HINSTANCE jvmLib = CoreLoadLibrary(jvmLibPath.c_str());
+
+    // Find symbol to create JVM
+    createJVMFuncPointer_t createJVM = (createJVMFuncPointer_t)GetProcAddress(jvmLib, "JNI_CreateJavaVM");
+
     JNIEnv* env;       /* pointer to native method interface */
     JavaVMInitArgs vm_args; /* JDK/JRE 6 VM initialization arguments */
     JavaVMOption* options = new JavaVMOption[1];
@@ -23,9 +53,11 @@ void CreateJVM()
     vm_args.nOptions = 1;
     vm_args.options = options;
     vm_args.ignoreUnrecognized = false;
+
     /* load and initialize a Java VM, return a JNI interface
      * pointer in env */
-    long flag = JNI_CreateJavaVM(&javaVM, (void**)&env, &vm_args);
+    jint flag = createJVM(&javaVM, (void**)&env, &vm_args);
+
     if (flag == JNI_ERR)
     {
         std::cout << "Error creating VM. Exiting...n";
