@@ -1,13 +1,13 @@
 #pragma once
 #include "AutomationBindingExports.h"
-#include "CADObject.h"
+#include "AutomationAPI_CADObject.h"
 
 namespace AutomationAPI
 {
 	/// <summary>
 	/// Block comment
 	/// </summary>
-	class Block : CADObject
+	class AUTOMATIONBINDING_API Block : public CADObject
 	{
 		public:
 

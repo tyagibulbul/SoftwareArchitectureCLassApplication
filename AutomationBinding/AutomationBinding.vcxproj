@@ -93,19 +93,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutomationBindingExports.h" />
-    <ClInclude Include="Wire.h" />
-    <ClInclude Include="Block.h" />
-    <ClInclude Include="BlockBuilder.h" />
-    <ClInclude Include="CADObject.h" />
-    <ClInclude Include="Extrude.h" />
-    <ClInclude Include="FeatureCollection.h" />
+    <ClInclude Include="AutomationAPI_Wire.h" />
+    <ClInclude Include="AutomationAPI_Block.h" />
+    <ClInclude Include="AutomationAPI_BlockBuilder.h" />
+    <ClInclude Include="AutomationAPI_CADObject.h" />
+    <ClInclude Include="AutomationAPI_Extrude.h" />
+    <ClInclude Include="AutomationAPI_FeatureCollection.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="IBuilder.h" />
-    <ClInclude Include="ICADObject.h" />
-    <ClInclude Include="Part.h" />
-    <ClInclude Include="RoutingCollection.h" />
-    <ClInclude Include="Session.h" />
-    <ClInclude Include="WireBuilder.h" />
+    <ClInclude Include="AutomationAPI_IBuilder.h" />
+    <ClInclude Include="AutomationAPI_ICADObject.h" />
+    <ClInclude Include="AutomationAPI_Part.h" />
+    <ClInclude Include="AutomationAPI_RoutingCollection.h" />
+    <ClInclude Include="AutomationAPI_Session.h" />
+    <ClInclude Include="AutomationAPI_WireBuilder.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Block.cpp" />

@@ -1,6 +1,6 @@
 #pragma once
 #include "AutomationBindingExports.h"
-#include "IBuilder.h"
+#include "AutomationAPI_IBuilder.h"
 
 namespace AutomationAPI
 {

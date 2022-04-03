@@ -1,13 +1,13 @@
 #pragma once
 #include "AutomationBindingExports.h"
-#include "CADObject.h"
+#include "AutomationAPI_CADObject.h"
 
 namespace AutomationAPI
 {
 	/// <summary>
 	/// Wire comment
 	/// </summary>
-	class Wire : CADObject
+	class AUTOMATIONBINDING_API Wire : public CADObject
 	{
 		public:
 

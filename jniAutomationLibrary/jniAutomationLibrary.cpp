@@ -8,6 +8,9 @@
 #include "..\Core\CoreUtils.h"
 #include <string>
 #include <iostream>
+#include "..\AppPartOps\Journaling_Part.h"
+#include "..\AppPartOps\Journaling_Session.h"
+
 
 JNIEXPORT jstring JNICALL Java_FakeAutomationJava_DoSomeStuff
 (JNIEnv* env, jobject obj, jint intVal, jstring strVal)
@@ -25,7 +28,7 @@ JNIEXPORT jstring JNICALL Java_FakeAutomationJava_DoSomeStuff
 
 	// TO give a sample of what we woudl call
 
-	PartFile* partFile = Journaling_OpenPart(BasePath() + "\\SampleVersionUp.prt");
+	Application::PartFile* partFile = Journaling_Session_OpenPart(BasePath() + "\\SampleVersionUp.prt");
 
 	int guid = partFile->GetGuid();
 

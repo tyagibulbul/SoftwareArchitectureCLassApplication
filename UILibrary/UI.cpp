@@ -9,6 +9,8 @@
 #include "..\Core\Observer.h"
 #include "..\JavaLoader\JavaLoader.h"
 #include "..\Core\CoreUtils.h"
+#include "..\FeatureOpsUI\BlockBuilderUI.h"
+#include "..\AppLibrary\Journaling_BlockBuilder.h"
 
 UI::UI()
 {
@@ -45,7 +47,7 @@ void UI::Init()
 
 void UI::StartGUILoop()
 {
-	int WorkFlowToRun = 2;
+	int WorkFlowToRun = 4;
 
 	if (WorkFlowToRun == 1)
 	{
@@ -58,6 +60,10 @@ void UI::StartGUILoop()
 	else if (WorkFlowToRun == 3)
 	{
 		PerformDotnetAutomationWorkflow();
+	}
+	else if (WorkFlowToRun == 4)
+	{
+		PerformSampleUsingBuilder();
 	}
 	else
 	{
@@ -84,11 +90,11 @@ void UI::PerformSampleJournalingPartsOps()
 	StartJournaling(BasePath() +"\\JournaledCPPFileProject\\SampleJournal.txt");
 
 
-	PartFile* partFile = MakePartUI("d:\\workdir\\someDir\\SomeName.part");
+	Application::PartFile* partFile = MakePartUI("d:\\workdir\\someDir\\SomeName.part");
 	AddWidgetFeatureToPartUI(partFile, true, 10);
 	SavePartUI(partFile);
 
-	PartFile* partFile2 = OpenPartUI(BasePath() + "\\SampleVersionUp.prt");
+	Application::PartFile* partFile2 = OpenPartUI(BasePath() + "\\SampleVersionUp.prt");
 
 	SavePartUI(partFile2);
 
@@ -102,6 +108,32 @@ void UI::PerformSampleJournalingPartsOps()
 	std::cout << "After UnLoaded Library" << std::endl;
 
 }
+
+void UI::PerformSampleUsingBuilder()
+{
+	// This is just mimic'ing a simple CAD workflow.
+	// We are going to pretend the user makes  part, makes a widget feature, saves the part,
+	// and then exits.  And this will stop the GUI loop and lead to exit on main
+
+	//Setup Journaling File
+	SetJournalingLangauge(JournalingLanguage::CPP);
+	StartJournaling(BasePath() + "\\JournaledCPPFileProject\\SampleJournal.txt");
+
+
+	Application::PartFile* partFile = MakePartUI("d:\\workdir\\someDir\\SomeName.part");
+	
+	Application::BlockBuilder* blockBuilder = CreateBlockBuilderUI(partFile, nullptr);
+	Journaling_BlockBuilder_SetType(blockBuilder, JournalBlockBuilderTypes::JournalTypesDiagonalPoints);
+	
+	SavePartUI(partFile);
+
+	//End Journaling
+	EndJournaling();
+
+
+
+}
+
 
 void UI::PerformJavaAutomationWorkflow()
 {

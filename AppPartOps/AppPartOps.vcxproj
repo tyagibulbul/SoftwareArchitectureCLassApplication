@@ -154,11 +154,15 @@
     <ClInclude Include="AppPartOpsExports.h" />
     <ClInclude Include="DelMeBadPattern.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Journaling_Part.h" />
+    <ClInclude Include="Journaling_Session.h" />
     <ClInclude Include="PartOps.h" />
     <ClInclude Include="PartOpsInternal.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Journaling_Part.cpp" />
+    <ClCompile Include="Journaling_Session.cpp" />
     <ClCompile Include="PartOps.cpp" />
   </ItemGroup>
   <ItemGroup>

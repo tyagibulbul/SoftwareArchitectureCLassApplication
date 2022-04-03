@@ -20,6 +20,7 @@ private:
 	void PerformSampleJournalingPartsOps();
 	void PerformJavaAutomationWorkflow();
 	void PerformDotnetAutomationWorkflow();
+	void PerformSampleUsingBuilder();
 
 	Observer* observer4;
 	Observer* observer5;

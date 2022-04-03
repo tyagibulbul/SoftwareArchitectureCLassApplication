@@ -152,11 +152,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BlockBuilderUI.h" />
     <ClInclude Include="FeatureOpsUIExports.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MakeWidgetFeature.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BlockBuilderUI.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="MakeWidgetFeature.cpp" />
   </ItemGroup>

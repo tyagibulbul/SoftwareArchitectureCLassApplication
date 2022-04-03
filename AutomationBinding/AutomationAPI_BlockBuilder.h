@@ -1,12 +1,12 @@
 #pragma once
 #include "AutomationBindingExports.h"
-#include "IBuilder.h"
+#include "AutomationAPI_IBuilder.h"
 
 namespace AutomationAPI
 {
 	class CADObject;
-
-
+	class BlockBuilder;
+	class BlockBuilderImpl;
 	/// <summary>
 	/// BlockBuilder comment
 	/// </summary>
@@ -34,8 +34,18 @@ namespace AutomationAPI
 
 
 			CADObject* Commit() override;
+
+			/*
+			* Internal Usage only.
+			*/
+			static BlockBuilder* CreateBlockBuilder(int guid);
+			virtual ~BlockBuilder();
+			BlockBuilder() = delete;
+
 		private:
 
+			BlockBuilder(int guid);
+			BlockBuilderImpl* m_blockBuilderImpl;
 
 	};
 }

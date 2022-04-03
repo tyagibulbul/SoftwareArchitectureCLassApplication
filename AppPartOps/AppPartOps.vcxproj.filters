@@ -34,12 +34,24 @@
     <ClInclude Include="DelMeBadPattern.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Journaling_Part.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Journaling_Session.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PartOps.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Journaling_Part.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Journaling_Session.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

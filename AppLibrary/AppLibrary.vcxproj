@@ -92,22 +92,30 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AppLibrary.h" />
+    <ClInclude Include="AppFeaturesOpsExports.h" />
     <ClInclude Include="Block.h" />
+    <ClInclude Include="BlockBuilder.h" />
     <ClInclude Include="Extrude.h" />
     <ClInclude Include="ExtrudeVersions.h" />
     <ClInclude Include="Feature.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Journaling_BlockBuilder.h" />
+    <ClInclude Include="Journaling_FeatureCollection.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AppLibrary.cpp" />
     <ClCompile Include="Block.cpp" />
+    <ClCompile Include="BlockBuilder.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Extrude.cpp" />
     <ClCompile Include="ExtrudeVersions.cpp" />
     <ClCompile Include="Feature.cpp" />
+    <ClCompile Include="Journaling_BlockBuilder.cpp" />
+    <ClCompile Include="Journaling_FeatureCollection.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AppsCore\AppsCore.vcxproj">
+      <Project>{5c8e80cc-32c4-4a81-8662-363e48b9ad1e}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Core.vcxproj">
       <Project>{5dc81d63-ec79-4d3c-be0f-7b36fd069376}</Project>
     </ProjectReference>
