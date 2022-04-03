@@ -3,7 +3,7 @@
 
 #include "JavaLoader.h"
 
-#include "jni.h"
+#include "..\JNI_Includes\jni.h"
 #include <iostream>
 #include "..\Core\CoreUtils.h"
 #include "..\Core\LibraryLoad.h"
