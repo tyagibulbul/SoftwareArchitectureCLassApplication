@@ -1,5 +1,7 @@
 #include "AutomationAPI_BlockBuilder.h"
 #include "AutomationAPI_CADObject.h"
+#include "..\AppLibrary\Journaling_BlockBuilder.h"
+#include <exception>
 
 namespace AutomationAPI
 {
@@ -52,11 +54,34 @@ AutomationAPI::CADObject* AutomationAPI::BlockBuilder::Commit()
 
 void AutomationAPI::BlockBuilder::SetType(AutomationAPI::BlockBuilder::BlockBuilderTypes type)
 {
+	Application::BlockBuilder* blockBuilder =
+		dynamic_cast<Application::BlockBuilder*>(
+			GuidObjectManager::GetGuidObjectManager().GetObjectFromGUID(m_blockBuilderImpl->m_guid));
+	if (blockBuilder == nullptr)
+	{
+		throw std::exception("not able to retrieve blockBuilder Object");
+	}
+
+	Journaling_BlockBuilder_SetType(blockBuilder,(JournalBlockBuilderTypes) type);
+
 }
 
 AutomationAPI::BlockBuilder::BlockBuilderTypes AutomationAPI::BlockBuilder::GetType()
 {
-	return AutomationAPI::BlockBuilder::TypesOriginAndEdgeLengths;
+	Application::BlockBuilder* blockBuilder =
+		dynamic_cast<Application::BlockBuilder*>(
+			GuidObjectManager::GetGuidObjectManager().GetObjectFromGUID(m_blockBuilderImpl->m_guid));
+
+	if (blockBuilder == nullptr)
+	{
+		throw std::exception("not able to retrieve blockBuilder Object");
+	}
+
+	
+	int t = (int)Journaling_BlockBuilder_GetType(blockBuilder);
+	AutomationAPI::BlockBuilder::BlockBuilderTypes type = (AutomationAPI::BlockBuilder::BlockBuilderTypes)t;
+
+	return type;
 }
 
 void AutomationAPI::BlockBuilder::SetHeight(int h)

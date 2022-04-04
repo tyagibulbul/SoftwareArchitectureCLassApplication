@@ -20,3 +20,23 @@ void Journaling_BlockBuilder_SetType(Application::BlockBuilder* blockBuilder, Jo
 	}
 
 }
+
+
+JournalBlockBuilderTypes Journaling_BlockBuilder_GetType(Application::BlockBuilder* blockBuilder)
+{
+	//If Journaling write the thing things
+	if (IsJournaling())
+	{
+		JournalStartCall("GetType", blockBuilder);
+	}
+
+	auto type  = blockBuilder->GetType();
+
+	if (IsJournaling())
+	{
+		JournalReturnInt(type, "type");
+		JournalEndCall();
+	}
+
+	return type;
+}

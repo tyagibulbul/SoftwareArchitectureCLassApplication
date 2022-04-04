@@ -14,6 +14,12 @@ namespace AutomationAPI
 
 			virtual ~FeatureCollection();
 
+			/// <summary>
+			/// Create a Block builder.
+			/// </summary>
+			/// <param name="block"> if nullptr is passed in this will be created in 
+			/// create mode, otherwise it be in edit mode.</param>
+			/// <returns></returns>
 			BlockBuilder* CreateBlockBuilder(Block* block);
 
 

@@ -29,6 +29,12 @@ extern JOURNALING_API void JournalEndCall();
 /// <param name="paramName"></param>
 extern JOURNALING_API void JournalIntInParam(int value, std::string paramName);
 /// <summary>
+/// Journals a return parameter as a integer
+/// </summary>
+/// <param name="value"></param>
+/// <param name="paramName"></param>
+extern JOURNALING_API void JournalReturnInt(int value, std::string paramName);
+/// <summary>
 /// Journals in a bool parameter
 /// </summary>
 /// <param name="value"></param>
