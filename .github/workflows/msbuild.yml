@@ -35,7 +35,11 @@ jobs:
       
     - name: Patrick2
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: dir packages      
+      run: dir packages  
+      
+    - name: Patrick3
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: dir D:\a\SoftwareArchitectureCLassApplication\SoftwareArchitectureCLassApplication\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.1.5\build\native\..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\x64\Debug\gtest_maind.lib
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
