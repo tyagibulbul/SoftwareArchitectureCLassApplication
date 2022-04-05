@@ -25,6 +25,10 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
 
+    - name: NuGet intall googletest
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: nuget install Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn
+
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
