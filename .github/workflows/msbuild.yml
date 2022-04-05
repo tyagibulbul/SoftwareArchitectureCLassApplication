@@ -28,6 +28,14 @@ jobs:
     - name: NuGet install googletest
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: nuget install Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn -OutputDirectory packages
+      
+    - name: Patrick1
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: dir   
+      
+    - name: Patrick2
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: dir packages      
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
