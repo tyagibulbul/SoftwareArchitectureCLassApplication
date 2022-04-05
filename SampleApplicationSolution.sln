@@ -35,7 +35,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jniAutomationLibrary", "jni
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppsCore", "AppsCore\AppsCore.vcxproj", "{5C8E80CC-32C4-4A81-8662-363E48B9AD1E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JavaAutomationBinding", "JavaAutomationBinding\JavaAutomationBinding.vcxproj", "{411221FD-C2F4-4335-BD7A-C910A0FAA91B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JavaAutomationBinding", "JavaAutomationBinding\JavaAutomationBinding.vcxproj", "{80FDD8C0-C3BF-4200-8F4E-BBDC6EA3A558}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,10 +107,10 @@ Global
 		{5C8E80CC-32C4-4A81-8662-363E48B9AD1E}.Debug|x64.Build.0 = Debug|x64
 		{5C8E80CC-32C4-4A81-8662-363E48B9AD1E}.Release|x64.ActiveCfg = Release|x64
 		{5C8E80CC-32C4-4A81-8662-363E48B9AD1E}.Release|x64.Build.0 = Release|x64
-		{411221FD-C2F4-4335-BD7A-C910A0FAA91B}.Debug|x64.ActiveCfg = Debug|x64
-		{411221FD-C2F4-4335-BD7A-C910A0FAA91B}.Debug|x64.Build.0 = Debug|x64
-		{411221FD-C2F4-4335-BD7A-C910A0FAA91B}.Release|x64.ActiveCfg = Release|x64
-		{411221FD-C2F4-4335-BD7A-C910A0FAA91B}.Release|x64.Build.0 = Release|x64
+		{80FDD8C0-C3BF-4200-8F4E-BBDC6EA3A558}.Debug|x64.ActiveCfg = Debug|x64
+		{80FDD8C0-C3BF-4200-8F4E-BBDC6EA3A558}.Debug|x64.Build.0 = Debug|x64
+		{80FDD8C0-C3BF-4200-8F4E-BBDC6EA3A558}.Release|x64.ActiveCfg = Release|x64
+		{80FDD8C0-C3BF-4200-8F4E-BBDC6EA3A558}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
