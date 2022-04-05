@@ -101,7 +101,6 @@
     <ClInclude Include="IObserver.h" />
     <ClInclude Include="ISubject.h" />
     <ClInclude Include="LibraryLoad.h" />
-    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="StringUtils.h" />
   </ItemGroup>
@@ -113,7 +112,6 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="GuidObject.cpp" />
     <ClCompile Include="LibraryLoad.cpp" />
-    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Observer.cpp" />
     <ClCompile Include="StringUtils.cpp" />
   </ItemGroup>
