@@ -5,7 +5,7 @@
 #include "..\AppPartOps\Journaling_Session.h"
 /* Header for class automationapi_Session */
 
-bool authorized = true;
+
 void JNICALL Java_automationapi_Session_initSession
 (JNIEnv*, jobject)
 {
