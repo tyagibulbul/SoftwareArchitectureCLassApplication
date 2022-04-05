@@ -24,10 +24,10 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup Condition="'$(Configuration)' == 'Debug' And '$(Platform)' == 'x64' And '$(Disable-Microsoft-googletest-v140-windesktop-msvcstl-dyn-rt-dyn)' == ''">
-          <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\x64\Debug\gtestd.dll" />
-      <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\x64\Debug\gtest_maind.dll" Condition="'$(Microsoft-GoogleTest-Disable-gtest_main)' == ''" />
-      <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\x64\Debug\gtestd.pdb" />
-      <ReferenceCopyLocalPaths Condition="'$(Microsoft-GoogleTest-Disable-gtest_main)' == ''" Include="$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\x64\Debug\gtest_maind.pdb" />
+          <ReferenceCopyLocalPaths Include="$(SolutionDir)GtestShorterPath\gtestd.dll" />
+      <ReferenceCopyLocalPaths Include="$(SolutionDir)GtestShorterPath\gtest_maind.dll" Condition="'$(Microsoft-GoogleTest-Disable-gtest_main)' == ''" />
+      <ReferenceCopyLocalPaths Include="$(SolutionDir)GtestShorterPath\\gtestd.pdb" />
+      <ReferenceCopyLocalPaths Condition="'$(Microsoft-GoogleTest-Disable-gtest_main)' == ''" Include="$(SolutionDir)GtestShorterPath\\gtest_maind.pdb" />
       </ItemGroup>
   <ItemGroup Condition="'$(Configuration)' != 'Debug' And '$(Platform)' == 'x64' And '$(Disable-Microsoft-googletest-v140-windesktop-msvcstl-dyn-rt-dyn)' == ''">
           <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\x64\Release\gtest.dll" />
