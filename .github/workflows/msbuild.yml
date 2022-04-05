@@ -25,9 +25,38 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
 
-    - name: NuGet intall googletest
+    - name: NuGet install googletest
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: nuget install Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn
+      run: nuget install Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn -OutputDirectory packages
+
+    - name: Patrick3
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: dir D:\a\SoftwareArchitectureCLassApplication\SoftwareArchitectureCLassApplication\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.1.5\build\native\..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn
+  
+    - name: Patrick4
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: dir D:\a\SoftwareArchitectureCLassApplication\SoftwareArchitectureCLassApplication\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.1.5\build\native\..\..\lib\native\v140\windesktop\msvcstl\dyn
+  
+    - name: Patrick5
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: dir D:\a\SoftwareArchitectureCLassApplication\SoftwareArchitectureCLassApplication\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.1.5\build\native\..\..\lib\native\v140\windesktop\msvcstl
+ 
+    - name: Patrick6
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: dir D:\a\SoftwareArchitectureCLassApplication\SoftwareArchitectureCLassApplication\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.1.5\build\native\..\..\lib\native\v140\windesktop
+ 
+    - name: Patrick7
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: dir D:\a\SoftwareArchitectureCLassApplication\SoftwareArchitectureCLassApplication\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.1.5\build\native\..\..\lib\native\v140
+ 
+    - name: Patrick8
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: dir D:\a\SoftwareArchitectureCLassApplication\SoftwareArchitectureCLassApplication\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.1.5\build\native\..\..\lib\native
+ 
+    - name: Patrick9
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: dir D:\a\SoftwareArchitectureCLassApplication\SoftwareArchitectureCLassApplication\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.1.5\build\native\..\..\lib\
+ 
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -35,6 +64,7 @@ jobs:
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
   test:
+    needs: build
     runs-on: windows-latest
     
     steps:
