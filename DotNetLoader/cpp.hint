@@ -1,0 +1,2 @@
+#define DOTNETLOADER_API __declspec(dllexport)
+#define DOTNETLOADER_API __declspec(dllimport)

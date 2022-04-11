@@ -106,6 +106,9 @@
     <ProjectReference Include="..\Core\Core.vcxproj">
       <Project>{5dc81d63-ec79-4d3c-be0f-7b36fd069376}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\DotNetLoader\DotNetLoader.vcxproj">
+      <Project>{49452584-9dea-47f3-8605-2a99f69f1483}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\FeatureOpsUI\FeatureOpsUI.vcxproj">
       <Project>{a3306c7e-c434-43ef-88b4-fd286c0f4148}</Project>
     </ProjectReference>

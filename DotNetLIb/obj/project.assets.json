@@ -1,0 +1,90 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "DotNetAutomationBinding/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/DotNetAutomationBinding.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DotNetAutomationBinding.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DotNetAutomationBinding/1.0.0": {
+      "type": "project",
+      "path": "../DotNetAutomationBinding/DotNetAutomationBinding.csproj",
+      "msbuildProject": "../DotNetAutomationBinding/DotNetAutomationBinding.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "DotNetAutomationBinding >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\polek\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication\\DotNetLIb\\DotNetLib.csproj",
+      "projectName": "DotNetLib",
+      "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication\\DotNetLIb\\DotNetLib.csproj",
+      "packagesPath": "C:\\Users\\polek\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication\\DotNetLIb\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\polek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication\\DotNetAutomationBinding\\DotNetAutomationBinding.csproj": {
+              "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication\\DotNetAutomationBinding\\DotNetAutomationBinding.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -7,6 +7,34 @@
 static bool determinedBasePath = false;
 static std::string basePath;
 
+// From  -https://stackoverflow.com/questions/4430780/how-can-i-extract-the-file-name-and-extension-from-a-path-in-c
+std::string GetFileName(const std::string& s) {
+    char sep = '/';
+#ifdef _WIN32
+    sep = '\\';
+#endif
+    size_t i = s.rfind(sep, s.length());
+    if (i != std::string::npos)
+    {
+        std::string filename = s.substr(i + 1, s.length() - i);
+        size_t lastindex = filename.find_last_of(".");
+        std::string rawname = filename.substr(0, lastindex);
+        return(rawname);
+    }
+
+    return("");
+}
+
+std::string GetBaseName(const std::string& s)
+{
+    size_t pos = s.rfind(".");
+
+    std::string retVal = s.substr(0, pos);
+
+    return retVal;
+}
+
+
 std::string BasePath() {
     if (!determinedBasePath)
     {

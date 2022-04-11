@@ -1,0 +1,2 @@
+#define CLRAUTOMATIONLIBRARY_API __declspec(dllexport)
+#define CLRAUTOMATIONLIBRARY_API __declspec(dllimport)

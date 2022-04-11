@@ -11,6 +11,7 @@
 #include "..\Core\CoreUtils.h"
 #include "..\FeatureOpsUI\BlockBuilderUI.h"
 #include "..\AppLibrary\Journaling_BlockBuilder.h"
+#include "..\DotNetLoader\DotNetLoader.h"
 
 UI::UI()
 {
@@ -47,7 +48,7 @@ void UI::Init()
 
 void UI::StartGUILoop()
 {
-	int WorkFlowToRun = 1;
+	int WorkFlowToRun = 4;
 
 	if (WorkFlowToRun == 1)
 	{
@@ -165,21 +166,24 @@ void UI::PerformSampleUsingBuilder()
 
 void UI::PerformJavaAutomationWorkflow()
 {
-// To resolve build errors and you don't want to setup the java portion just chagne the #ifdef value to be zero
-#if 1
 	CreateJVM();
 
 	std::string baseString = BasePath();
 	std::cout << "baseString " << baseString << std::endl;
-	//RunJavaProgram1("FirstProgram");
 	RunJavaProgramWithClassLoader(BasePath() + "\\SimpleHelloWorldJava\\HelloWorld.class");
 
 	RunJavaProgramWithClassLoader(BasePath() + "\\FakeAutomationJava\\CallFakeJavaAutomation.class");
 	DestroyJVM();
 
-#endif
 }
 
 void UI::PerformDotnetAutomationWorkflow()
 {
+	StartCLR();
+
+	int err = RunDotNetProgram(BasePath() + "\\DotNetLIb\\bin\\Debug\\net5.0\\DotNetLib.dll");
+	
+
+
+
 }
