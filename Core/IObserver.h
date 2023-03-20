@@ -2,6 +2,11 @@
 #include "CoreExports.h"
 #include <string>
 
+/// <summary>
+/// Observer interface class
+/// 
+/// Inspired from - https://refactoring.guru/design-patterns/observer/cpp/example
+/// </summary>
 class CORE_API IObserver {
 public:
     enum EventTypes

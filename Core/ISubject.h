@@ -3,6 +3,11 @@
 #include <string>
 #include "IObserver.h"
 
+/// <summary>
+/// Subject interface class 
+/// 
+/// Inspired from - https://refactoring.guru/design-patterns/observer/cpp/example
+/// </summary>
 class CORE_API ISubject {
 public:
     virtual ~ISubject() {};

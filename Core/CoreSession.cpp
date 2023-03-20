@@ -134,5 +134,12 @@ void CoreSession::HowManyObserver() {
 
 void CoreSession::ClearObservers()
 {
+    std::list<IObserver*>::iterator iterator = m_listObserver.begin();
 
+    while (iterator != m_listObserver.end())
+    {
+        IObserver* observer = *iterator;
+        delete observer;
+        ++iterator;
+    }
 }
