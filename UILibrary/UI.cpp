@@ -47,7 +47,7 @@ void UI::Init()
 
 void UI::StartGUILoop()
 {
-	int WorkFlowToRun = 1;
+	int WorkFlowToRun = 3;
 
 	if (WorkFlowToRun == 1)
 	{

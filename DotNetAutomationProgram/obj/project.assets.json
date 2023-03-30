@@ -1,0 +1,219 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "AppFeatureOps/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "AppsCore": "1.0.0",
+          "Core": "1.0.0",
+          "DataReader": "1.0.0",
+          "Journaling": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AppFeatureOps.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AppFeatureOps.dll": {}
+        }
+      },
+      "AppPartOps/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "AppFeatureOps": "1.0.0",
+          "Core": "1.0.0",
+          "Journaling": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AppPartOps.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AppPartOps.dll": {}
+        }
+      },
+      "AppsCore/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/AppsCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AppsCore.dll": {}
+        }
+      },
+      "Core/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.dll": {}
+        }
+      },
+      "DataReader/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataReader.dll": {}
+        }
+      },
+      "DotNetAutomationBinding/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DotNetAutomationNative": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DotNetAutomationBinding.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DotNetAutomationBinding.dll": {}
+        }
+      },
+      "DotNetAutomationNative/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "AppPartOps": "1.0.0",
+          "AppsCore": "1.0.0",
+          "Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DotNetAutomationNative.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DotNetAutomationNative.dll": {}
+        }
+      },
+      "Journaling/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Journaling.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Journaling.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AppFeatureOps/1.0.0": {
+      "type": "project",
+      "path": "../AppLibrary/AppLibrary.vcxproj",
+      "msbuildProject": "../AppLibrary/AppLibrary.vcxproj"
+    },
+    "AppPartOps/1.0.0": {
+      "type": "project",
+      "path": "../AppPartOps/AppPartOps.vcxproj",
+      "msbuildProject": "../AppPartOps/AppPartOps.vcxproj"
+    },
+    "AppsCore/1.0.0": {
+      "type": "project",
+      "path": "../AppsCore/AppsCore.vcxproj",
+      "msbuildProject": "../AppsCore/AppsCore.vcxproj"
+    },
+    "Core/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.vcxproj",
+      "msbuildProject": "../Core/Core.vcxproj"
+    },
+    "DataReader/1.0.0": {
+      "type": "project",
+      "path": "../DataReader/DataReader.vcxproj",
+      "msbuildProject": "../DataReader/DataReader.vcxproj"
+    },
+    "DotNetAutomationBinding/1.0.0": {
+      "type": "project",
+      "path": "../DotNetAutomationBinding/DotNetAutomationBinding.csproj",
+      "msbuildProject": "../DotNetAutomationBinding/DotNetAutomationBinding.csproj"
+    },
+    "DotNetAutomationNative/1.0.0": {
+      "type": "project",
+      "path": "../DotNetAutomationNative/DotNetAutomationNative.vcxproj",
+      "msbuildProject": "../DotNetAutomationNative/DotNetAutomationNative.vcxproj"
+    },
+    "Journaling/1.0.0": {
+      "type": "project",
+      "path": "../Journaling/Journaling.vcxproj",
+      "msbuildProject": "../Journaling/Journaling.vcxproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "DotNetAutomationBinding >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\polek\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationProgram\\DotNetAutomationProgram.csproj",
+      "projectName": "DotNetAutomationProgram",
+      "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationProgram\\DotNetAutomationProgram.csproj",
+      "packagesPath": "C:\\Users\\polek\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationProgram\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\polek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationBinding\\DotNetAutomationBinding.csproj": {
+              "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationBinding\\DotNetAutomationBinding.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

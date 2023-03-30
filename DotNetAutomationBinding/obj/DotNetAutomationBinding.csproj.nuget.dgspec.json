@@ -1,0 +1,217 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationBinding\\DotNetAutomationBinding.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppLibrary\\AppLibrary.vcxproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppLibrary\\AppLibrary.vcxproj",
+        "projectName": "AppFeatureOps",
+        "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppLibrary\\AppLibrary.vcxproj",
+        "frameworks": {
+          "native": {
+            "projectReferences": {
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppsCore\\AppsCore.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppsCore\\AppsCore.vcxproj"
+              },
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj"
+              },
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DataReader\\DataReader.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DataReader\\DataReader.vcxproj"
+              },
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Journaling\\Journaling.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Journaling\\Journaling.vcxproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "native": {}
+      }
+    },
+    "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppPartOps\\AppPartOps.vcxproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppPartOps\\AppPartOps.vcxproj",
+        "projectName": "AppPartOps",
+        "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppPartOps\\AppPartOps.vcxproj",
+        "frameworks": {
+          "native": {
+            "projectReferences": {
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppLibrary\\AppLibrary.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppLibrary\\AppLibrary.vcxproj"
+              },
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj"
+              },
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Journaling\\Journaling.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Journaling\\Journaling.vcxproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "native": {}
+      }
+    },
+    "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppsCore\\AppsCore.vcxproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppsCore\\AppsCore.vcxproj",
+        "projectName": "AppsCore",
+        "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppsCore\\AppsCore.vcxproj",
+        "frameworks": {
+          "native": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "native": {}
+      }
+    },
+    "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj",
+        "projectName": "Core",
+        "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj",
+        "frameworks": {
+          "native": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "native": {}
+      }
+    },
+    "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DataReader\\DataReader.vcxproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DataReader\\DataReader.vcxproj",
+        "projectName": "DataReader",
+        "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DataReader\\DataReader.vcxproj",
+        "frameworks": {
+          "native": {
+            "projectReferences": {
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "native": {}
+      }
+    },
+    "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationBinding\\DotNetAutomationBinding.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationBinding\\DotNetAutomationBinding.csproj",
+        "projectName": "DotNetAutomationBinding",
+        "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationBinding\\DotNetAutomationBinding.csproj",
+        "packagesPath": "C:\\Users\\polek\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationBinding\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\polek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationNative\\DotNetAutomationNative.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationNative\\DotNetAutomationNative.vcxproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationNative\\DotNetAutomationNative.vcxproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationNative\\DotNetAutomationNative.vcxproj",
+        "projectName": "DotNetAutomationNative",
+        "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\DotNetAutomationNative\\DotNetAutomationNative.vcxproj",
+        "frameworks": {
+          "native": {
+            "projectReferences": {
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppPartOps\\AppPartOps.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppPartOps\\AppPartOps.vcxproj"
+              },
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppsCore\\AppsCore.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\AppsCore\\AppsCore.vcxproj"
+              },
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "native": {}
+      }
+    },
+    "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Journaling\\Journaling.vcxproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Journaling\\Journaling.vcxproj",
+        "projectName": "Journaling",
+        "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Journaling\\Journaling.vcxproj",
+        "frameworks": {
+          "native": {
+            "projectReferences": {
+              "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj": {
+                "projectPath": "C:\\Users\\polek\\source\\repos\\SoftwareArchitectureCLassApplication_mar\\Core\\Core.vcxproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "native": {}
+      }
+    }
+  }
+}

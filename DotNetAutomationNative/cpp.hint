@@ -1,0 +1,2 @@
+#define DOTNETAUTOMATIONNATIVE_API __declspec(dllexport)
+#define DOTNETAUTOMATIONNATIVE_API __declspec(dllimport)
