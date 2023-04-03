@@ -7,10 +7,13 @@
 #include "..\Core\LibraryLoad.h"
 #include "..\Core\CoreSession.h"
 #include "..\Core\Observer.h"
+#include "..\Core\LocalizationUtil.h"
+#include "..\Core\LoggerUtils.h"
 #include "..\JavaLoader\JavaLoader.h"
 #include "..\Core\CoreUtils.h"
 #include "..\FeatureOpsUI\BlockBuilderUI.h"
 #include "..\AppLibrary\Journaling_BlockBuilder.h"
+#include <iostream>
 
 UI::UI()
 {
@@ -47,7 +50,10 @@ void UI::Init()
 
 void UI::StartGUILoop()
 {
-	int WorkFlowToRun = 3;
+
+	std::cout << Localize("User interface is starting up", "GUI is starting up") << std::endl;
+
+	int WorkFlowToRun = 2;
 
 	if (WorkFlowToRun == 1)
 	{
@@ -107,10 +113,16 @@ void UI::PerformPartsOpsThatNeedsToLoadDemandLoadedLibrary()
 	//End Journaling
 	EndJournaling();
 
+	LogMessages("Before Loaded Library",normal);
 	std::cout << "Before Loaded Library" << std::endl;
-	HINSTANCE handle = CoreLoadLibrary("COOLDEMANDLOADEDLIBRARY.dll");
+    HINSTANCE handle = CoreLoadLibrary("COOLDEMANDLOADEDLIBRARY.dll");
+
+	// TO make library stay in memory and not unload until end of shutdown uncomment the line below
+	// HINSTANCE handle2 = CoreKeepLoadedLibraryPersistant("COOLDEMANDLOADEDLIBRARY.dll");
+	LogMessages("After Loaded Library", normal);
 	std::cout << "After Loaded Library" << std::endl;
 	UnloadLibrary(handle);
+	LogMessages("After UnLoaded Library", normal);
 	std::cout << "After UnLoaded Library" << std::endl;
 }
 
@@ -182,4 +194,8 @@ void UI::PerformJavaAutomationWorkflow()
 
 void UI::PerformDotnetAutomationWorkflow()
 {
+
+
+
+
 }

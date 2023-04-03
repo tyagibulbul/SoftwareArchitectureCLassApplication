@@ -2,6 +2,6 @@
 #include "CoreExports.h"
 #include <windows.h> 
 
-CORE_API HINSTANCE CoreLoadLibrary(const char* libraryName);
-CORE_API void UnloadLibrary(HINSTANCE handle);
-
+CORE_API HMODULE  CoreLoadLibrary(const char* libraryName);
+CORE_API void UnloadLibrary(HMODULE  handle);
+CORE_API HMODULE CoreKeepLoadedLibraryPersistant(const char* libraryName);

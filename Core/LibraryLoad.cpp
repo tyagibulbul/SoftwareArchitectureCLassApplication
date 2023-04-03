@@ -14,9 +14,9 @@ std::wstring s2ws(const std::string& str)
     return wstrTo;
 }
 
-HINSTANCE  CoreLoadLibrary(const char* libraryName)
+HMODULE  CoreLoadLibrary(const char* libraryName)
 {
-    HINSTANCE hinstLib;
+    HMODULE hinstLib;
    
     std::wstring temp = s2ws(libraryName);
 
@@ -27,8 +27,20 @@ HINSTANCE  CoreLoadLibrary(const char* libraryName)
     return hinstLib;
 }
 
+HMODULE CoreKeepLoadedLibraryPersistant(const char* libraryName)
+{
+    HMODULE  hinstLib;
 
-void UnloadLibrary(HINSTANCE hinstLib)
+    std::string temp = std::string(libraryName);
+
+    BOOL b = GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_PIN, temp.c_str(), &hinstLib);
+
+    return hinstLib;
+
+}
+
+
+void UnloadLibrary(HMODULE  hinstLib)
 {
     BOOL fFreeResult = FALSE;
     fFreeResult = FreeLibrary(hinstLib);

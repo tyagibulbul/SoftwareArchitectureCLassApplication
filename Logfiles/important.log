@@ -1,0 +1,27 @@
+000001: <critical>	Product Core is Initialized
+000004: <warning>	Something bad is going on but I can handle it
+000005: <warning>	Product Core is Initialized
+000006: <critical>	Everything crumbles, shoot me now!
+000007: <critical>	Product Core is Initialized
+000008: <normal>	[IMPORTANT_MESSAGE] An important message
+000012: <warning>	Something bad is going on but I can handle it
+000013: <warning>	Before Loaded Library
+000014: <critical>	Everything crumbles, shoot me now!
+000015: <critical>	Before Loaded Library
+000016: <normal>	[IMPORTANT_MESSAGE] An important message
+000020: <warning>	Something bad is going on but I can handle it
+000021: <warning>	After Loaded Library
+000022: <critical>	Everything crumbles, shoot me now!
+000023: <critical>	After Loaded Library
+000024: <normal>	[IMPORTANT_MESSAGE] An important message
+000028: <warning>	Something bad is going on but I can handle it
+000029: <warning>	After UnLoaded Library
+000030: <critical>	Everything crumbles, shoot me now!
+000031: <critical>	After UnLoaded Library
+000032: <normal>	[IMPORTANT_MESSAGE] An important message
+000033: <critical>	Product Core is Shutdown
+000036: <warning>	Something bad is going on but I can handle it
+000037: <warning>	Product Core is Shutdown
+000038: <critical>	Everything crumbles, shoot me now!
+000039: <critical>	Product Core is Shutdown
+000040: <normal>	[IMPORTANT_MESSAGE] An important message
