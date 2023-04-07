@@ -152,21 +152,21 @@ void LogMessages(const std::string& ctx, severity_level level)
 
     BOOST_LOG_SEV(slg, level) << ctx << std::endl;
 
-    // Below code is to spam the log file is different severity.
-    // Just for Demo purposes
+     //Below code is to spam the log file is different severity.
+     //Just for Demo purposes
 
-    //BOOST_LOG_SEV(slg, normal) << "A regular message" << std::endl;
-    //BOOST_LOG_SEV(slg, normal) << ctx << std::endl;
-    //BOOST_LOG_SEV(slg, warning) << "Something bad is going on but I can handle it" << std::endl;
-    //BOOST_LOG_SEV(slg, warning) << ctx << std::endl;
+    BOOST_LOG_SEV(slg, normal) << "A regular message" << std::endl;
+    BOOST_LOG_SEV(slg, normal) << ctx << std::endl;
+    BOOST_LOG_SEV(slg, warning) << "Something bad is going on but I can handle it" << std::endl;
+    BOOST_LOG_SEV(slg, warning) << ctx << std::endl;
 
-    //BOOST_LOG_SEV(slg, critical) << "Everything crumbles, shoot me now!" << std::endl;
-    //BOOST_LOG_SEV(slg, critical) << ctx << std::endl;
+    BOOST_LOG_SEV(slg, critical) << "Everything crumbles, shoot me now!" << std::endl;
+    BOOST_LOG_SEV(slg, critical) << ctx << std::endl;
 
-    //{
-    //    BOOST_LOG_SCOPED_THREAD_TAG("Tag", "IMPORTANT_MESSAGE");
-    //    BOOST_LOG_SEV(slg, normal) << "An important message" << std::endl;;
-    //}
+    {
+        BOOST_LOG_SCOPED_THREAD_TAG("Tag", "IMPORTANT_MESSAGE");
+        BOOST_LOG_SEV(slg, normal) << "An important message" << std::endl;;
+    }
 
 
 

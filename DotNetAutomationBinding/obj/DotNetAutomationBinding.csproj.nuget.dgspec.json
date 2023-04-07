@@ -149,6 +149,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "boost": {
+              "target": "Package",
+              "version": "[1.81.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
